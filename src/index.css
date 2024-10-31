@@ -1,12 +1,44 @@
+@font-face {
+  font-family: "MacPawFixelDisplay";
+  src: url("./assets/fonts/macpaw/MacPawFixelDisplay-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MacPawFixelDisplay";
+  src: url("./assets/fonts/macpaw/MacPawFixelDisplay-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MacPawFixelDisplay";
+  src: url("./assets/fonts/macpaw/MacPawFixelDisplay-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MacPawFixelDisplay";
+  src: url("./assets/fonts/macpaw/MacPawFixelDisplay-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
-  font-family: Roboto, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --black: #121417;
+  --green: #85aa9f;
+  --white: #fcfcfc;
+  --white-1: #f8f8f8;
+
+  font-family: MacPawFixelDisplay, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-size: 16px;
 
-  color-scheme: light dark;
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #f0f4f9;
+  color: var(--black);
+  background-color: var(--white-1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,7 +50,7 @@ body {
   margin: 0, auto;
   min-width: 320px;
   min-height: 100vh;
-  font-family: Roboto, sans-serif;
+  font-family: MacPawFixelDisplay, sans-serif;
   line-height: 1.5;
 }
 
