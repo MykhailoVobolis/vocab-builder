@@ -1,0 +1,28 @@
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 64px;
+  border-radius: 30px;
+  width: 628px;
+  background-color: var(--background-form);
+}
+
+.title {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.about {
+  font-size: 20px;
+  color: var(--text-form);
+  margin-bottom: 32px;
+}
+
+.loginLink {
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-semitransparent);
+}
