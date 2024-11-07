@@ -34,3 +34,14 @@ export const getTasks = createAsyncThunk("words/getTasks", async (_, thunkAPI) =
     return thunkAPI.rejectWithValue({ message: errorMessage });
   }
 });
+
+// Додавання нового слова
+export const addWord = createAsyncThunk("words/addWord", async (newWord, thunkAPI) => {
+  try {
+    const response = await axios.post("/words/create", newWord);
+    return response.data;
+  } catch (error) {
+    const errorMessage = handleError(error);
+    return thunkAPI.rejectWithValue({ message: errorMessage });
+  }
+});
