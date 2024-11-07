@@ -1,15 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-
-axios.defaults.baseURL = "https://vocab-builder-backend.p.goit.global/api";
-
-const setAuthHeader = (token) => {
-  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-};
-
-const clearAuthHeader = () => {
-  axios.defaults.headers.common["Authorization"] = "";
-};
+import { handleError } from "../helpers.js";
+import { clearAuthHeader, setAuthHeader } from "../../utils/authAPI.js";
 
 // Регістрація нового користувача
 export const register = createAsyncThunk("auth/register", async (newUser, thunkAPI) => {
@@ -20,7 +12,8 @@ export const register = createAsyncThunk("auth/register", async (newUser, thunkA
 
     return response.data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    const errorMessage = handleError(error);
+    return thunkAPI.rejectWithValue({ message: errorMessage });
   }
 });
 
@@ -33,7 +26,8 @@ export const logIn = createAsyncThunk("auth/login", async (userInfo, thunkAPI) =
 
     return response.data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    const errorMessage = handleError(error);
+    return thunkAPI.rejectWithValue({ message: errorMessage });
   }
 });
 
@@ -44,7 +38,8 @@ export const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
     // Видалення хедеру при виходу користувача з App
     clearAuthHeader();
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    const errorMessage = handleError(error);
+    return thunkAPI.rejectWithValue({ message: errorMessage });
   }
 });
 

@@ -5,7 +5,7 @@ import { MdError } from "react-icons/md";
 
 import css from "./InputField.module.css";
 
-export default function InputField({ name, label, type = "text", placeholder, setValue }) {
+export default function InputField({ name, label, type = "text", placeholder }) {
   const {
     register,
     formState: { errors },
@@ -19,7 +19,7 @@ export default function InputField({ name, label, type = "text", placeholder, se
 
   return (
     <div className={css.inputGroup}>
-      <label htmlFor={name} className={css.label}>
+      <label className={css.label} htmlFor={name}>
         {label}
       </label>
       <input

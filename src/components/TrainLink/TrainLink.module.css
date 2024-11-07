@@ -1,0 +1,18 @@
+.trainLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--black);
+  transition: color var(--animation);
+}
+
+.trainLink:hover {
+  color: var(--green);
+}
+
+.lincIcon {
+  stroke: var(--green);
+}

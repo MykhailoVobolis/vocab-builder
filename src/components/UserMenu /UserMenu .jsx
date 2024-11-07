@@ -1,9 +1,9 @@
 import UserAvatar from "../UserAvatar/UserAvatar.jsx";
-import { FaArrowRight } from "react-icons/fa6";
+import { HiOutlineArrowRight } from "react-icons/hi";
 import { useDispatch } from "react-redux";
+import { logOut } from "../../redux/auth/operations.js";
 
 import css from "./UserMenu .module.css";
-import { logOut } from "../../redux/auth/operations.js";
 
 export default function UserMenu() {
   const dispatch = useDispatch();
@@ -14,7 +14,10 @@ export default function UserMenu() {
   return (
     <div className={css.userMenuContainer}>
       <UserAvatar />
-      <button className={css.logoutBtn}>Log out{<FaArrowRight size={16} onClick={handleClick} />}</button>
+      <button className={css.logoutBtn} onClick={handleClick}>
+        <span>Log out</span>
+        <HiOutlineArrowRight className={css.logOutIcon} size={16} />
+      </button>
     </div>
   );
 }

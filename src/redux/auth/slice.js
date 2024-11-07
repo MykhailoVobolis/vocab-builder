@@ -7,6 +7,7 @@ const handlePending = (state) => {
 
 const handleRejected = (state) => {
   state.loading = false;
+  state.error = true;
 };
 
 // Стан даних про користувача
@@ -20,6 +21,7 @@ const authSlise = createSlice({
     token: null,
     isLoggedIn: false,
     isRefrreshing: false,
+    error: null,
   },
   extraReducers: (builder) => {
     builder
@@ -66,6 +68,7 @@ const authSlise = createSlice({
       .addCase(refreshUser.fulfilled, (state, action) => {
         state.user.name = action.payload.name;
         state.user.email = action.payload.email;
+        state.token = action.payload.token;
         state.isLoggedIn = true;
         state.loading = false;
         state.isRefrreshing = false;

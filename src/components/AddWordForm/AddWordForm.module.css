@@ -1,0 +1,25 @@
+.selectContainer {
+  position: relative;
+}
+
+.imputContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hintText {
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--description-form);
+  position: absolute;
+  top: 88px;
+}

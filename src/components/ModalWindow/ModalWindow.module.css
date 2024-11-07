@@ -1,0 +1,37 @@
+.modalContainer {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.openedModalContainer {
+  opacity: 1;
+}
+
+.closedModalContainer {
+  opacity: 0;
+  display: none;
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  z-index: 999999;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.closeIcon {
+  fill: var(--white);
+}

@@ -6,13 +6,18 @@
 }
 
 .logoutBtn {
-  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: inherit;
+  font-weight: 500;
   gap: 6px;
   width: 81px;
   border: none;
   background-color: transparent;
   padding: 8px 0;
+}
+
+.logOutIcon {
+  stroke: var(--black);
 }

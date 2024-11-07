@@ -6,6 +6,14 @@
   z-index: 999;
 }
 
+.isLoggedInHeader {
+  max-width: 100%;
+  background-color: var(--main-white);
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+}
+
 .navContainer {
   max-width: 1240px;
   margin-left: auto;

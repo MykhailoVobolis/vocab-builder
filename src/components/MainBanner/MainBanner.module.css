@@ -25,4 +25,9 @@
   text-align: center;
   font-weight: 700;
   color: var(--text-semitransparent);
+  transition: color var(--animation);
+}
+
+.loginLink:hover {
+  color: var(--black);
 }

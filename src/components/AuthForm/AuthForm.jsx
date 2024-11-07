@@ -28,13 +28,7 @@ export default function AuthForm({ type, title }) {
         methods.reset();
       })
       .catch((error) => {
-        if (error === "Request failed with status code 401") {
-          toast.error("Email or password invalid"); // Обробка помилки при логіні юзера
-        } else if (error === "Request failed with status code 409") {
-          toast.error("Such email already exists"); // Обробка помилки при реєстрації юзера
-        } else {
-          toast.error("An unexpected error occurred");
-        }
+        toast.error(error.message);
       });
   };
 

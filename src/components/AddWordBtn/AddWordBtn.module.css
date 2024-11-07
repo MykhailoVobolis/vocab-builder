@@ -1,0 +1,22 @@
+.addWordBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--black);
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  transition: color var(--animation);
+}
+
+.addWordBtn:hover {
+  color: var(--green);
+}
+
+.addWordIcon {
+  stroke: var(--green);
+}

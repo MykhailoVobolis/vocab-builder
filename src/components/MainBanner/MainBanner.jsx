@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import SignUpForm from "../AuthForm/AuthForm.jsx";
-import css from "./MainBanner.module.css";
+import { capitalizeFirstLetter } from "../../Helpers/capitalizeFirstLetter.js";
 
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+import css from "./MainBanner.module.css";
 
 export default function MainBanner({ title, text, linkTo, type }) {
   return (

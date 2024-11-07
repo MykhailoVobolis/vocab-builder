@@ -13,7 +13,7 @@ export default function AppBar() {
   const isTablet = useMedia("(min-width: 768px)");
 
   return (
-    <header className={css.header}>
+    <header className={isLoggedIn ? css.isLoggedInHeader : css.header}>
       <div className={css.navContainer}>
         <Navigation isLoggedIn={isLoggedIn} />
         {isLoggedIn && <UserMenu />}

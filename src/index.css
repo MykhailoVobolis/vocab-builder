@@ -37,6 +37,10 @@
   --text-form: rgba(18, 20, 23, 0.8);
   --text-semitransparent: rgba(18, 20, 23, 0.5);
   --border: rgba(18, 20, 23, 0.1);
+  --border-white: rgba(252, 252, 252, 0.3);
+  --main-white: #ffffff;
+  --shadow: rgba(18, 20, 23, 0.08);
+  --description-form: rgba(252, 252, 252, 0.8);
 
   font-family: MacPawFixelDisplay, sans-serif;
   line-height: 1.5;

@@ -1,19 +1,38 @@
 .formButton {
-    display: block;
-    color: var(--white);
-    border-radius: 100px;
-    border: none;
-    width: 100%;
-    height: 60px;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.56;
-    background-color: var(--green);
-    transition: background-color var(--animation);
-    margin-bottom: 16px;
-  }
-  
-  .formButton:hover {
-    background-color: var(--accent-secondary);
-  }
+  display: block;
+  color: var(--white);
+  border-radius: 100px;
+  border: none;
+  width: 100%;
+  height: 60px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.56;
+  background-color: var(--green);
+  transition: background-color var(--animation);
+  margin-bottom: 16px;
+}
+
+.formButton:hover {
+  background-color: var(--accent-secondary);
+}
+
+.wordsFormButton {
+  display: block;
+  color: var(--black);
+  border-radius: 100px;
+  border: none;
+  width: 100%;
+  height: 56px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.56;
+  background-color: var(--white);
+  transition: color var(--animation);
+}
+
+.wordsFormButton:hover {
+  color: var(--accent-secondary);
+}
