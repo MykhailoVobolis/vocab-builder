@@ -23,12 +23,24 @@ const wordsSlise = createSlice({
       page: 1,
       perPage: 0,
     },
+    filterDictionaryParams: {
+      keyword: "",
+      category: "",
+      isIrregular: null,
+      page: 1,
+    },
     currentWord: {},
     error: null,
   },
   reducers: {
     addCurrentWord: (state, action) => {
       state.currentWord = action.payload;
+    },
+    changeFilterParams: (state, action) => {
+      state.filterDictionaryParams = { ...state.filterParams, ...action.payload };
+    },
+    changeDictionaryPage: (state, action) => {
+      state.filterDictionaryParams.page = action.payload;
     },
   },
 
@@ -69,4 +81,4 @@ const wordsSlise = createSlice({
 });
 
 export const wordsReduser = wordsSlise.reducer;
-export const { addCurrentWord } = wordsSlise.actions;
+export const { addCurrentWord, changeFilterParams, changeDictionaryPage } = wordsSlise.actions;

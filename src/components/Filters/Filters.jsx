@@ -4,17 +4,25 @@ import debounce from "lodash.debounce";
 import SearchInputField from "../SearchInputField/SearchInputField.jsx";
 import RadioField from "../RadioField/RadioField.jsx";
 import CustomSelect from "../CustomSelect/CustomSelect.jsx";
-import { selectCategories } from "../../redux/words/selectors.js";
+import { selectCategories, selectFilterDictionaryParams } from "../../redux/words/selectors.js";
 import { useDispatch, useSelector } from "react-redux";
+import { getWordsOwn } from "../../redux/words/operations.js";
+import { changeFilterParams } from "../../redux/words/slice.js";
 
 import css from "./Filters.module.css";
-import { getWordsOwn } from "../../redux/words/operations.js";
 
 export default function Filters() {
   const dispatch = useDispatch();
   const categories = useSelector(selectCategories);
+  const filterParams = useSelector(selectFilterDictionaryParams);
 
-  const methods = useForm();
+  const { keyword: keywordValue, category: categoryValue, isIrregular: isIrregularValue } = filterParams;
+
+  const methods = useForm({
+    defaultValues: {
+      keyword: keywordValue,
+    },
+  });
   const { handleSubmit, watch } = methods;
 
   // Використовуємо watch для відстеження змін category
@@ -23,8 +31,10 @@ export default function Filters() {
   useEffect(() => {
     if (category !== "verb") {
       methods.setValue("isIrregular", null);
+    } else {
+      methods.setValue("isIrregular", isIrregularValue);
     }
-  }, [category, methods]);
+  }, [category, methods, isIrregularValue]);
 
   const onSubmit = (data) => {
     const filterData = {
@@ -32,8 +42,12 @@ export default function Filters() {
       category: data.category,
       ...(data.category === "verb" && { isIrregular: data.isIrregular }),
     };
-    dispatch(getWordsOwn(filterData));
+    dispatch(changeFilterParams(filterData));
   };
+
+  useEffect(() => {
+    dispatch(getWordsOwn(filterParams));
+  }, [filterParams, dispatch]);
 
   // Создаем debounced версию onSubmit
   const debouncedSubmit = debounce(handleSubmit(onSubmit), 300);
@@ -51,7 +65,7 @@ export default function Filters() {
     <FormProvider {...methods}>
       <form className={css.searchForm}>
         <SearchInputField name="keyword" label="Keyword" placeholder="Find the word" />
-        <CustomSelect name="category" label="Category" options={categories} />
+        <CustomSelect name="category" label="Category" options={categories} categoryValue={categoryValue} />
         {category === "verb" && <RadioField name="isIrregular" label="IsIrregular" />}
       </form>
     </FormProvider>

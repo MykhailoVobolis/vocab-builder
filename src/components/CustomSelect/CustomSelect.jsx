@@ -7,7 +7,7 @@ import { MdError } from "react-icons/md";
 
 import css from "./CustomSelect.module.css";
 
-export default function CustomSelect({ name, options, placeholder = "Categories", formType }) {
+export default function CustomSelect({ name, options, categoryValue = "Categories", formType }) {
   const {
     register,
     setValue,
@@ -16,7 +16,7 @@ export default function CustomSelect({ name, options, placeholder = "Categories"
   } = useFormContext();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState("Categories");
   const selectRef = useRef(null);
 
   const handleOptionClick = (option) => {
@@ -47,7 +47,13 @@ export default function CustomSelect({ name, options, placeholder = "Categories"
       ref={selectRef}
       onClick={() => setIsOpen(!isOpen)}>
       <div className={css.selectedOption}>
-        <p className={css.selectPlaceholder}>{capitalizeFirstLetter(selectedOption) || placeholder} </p>
+        <p className={css.selectPlaceholder}>
+          {formType === "words"
+            ? capitalizeFirstLetter(selectedOption)
+            : categoryValue !== ""
+            ? capitalizeFirstLetter(categoryValue)
+            : "Categories"}
+        </p>
         <IoChevronDown
           className={`${formType === "words" ? css.modalSelectIcon : css.selectIcon} ${isOpen ? css.isOpen : ""}`}
           size={20}
@@ -67,7 +73,7 @@ export default function CustomSelect({ name, options, placeholder = "Categories"
           ))}
         </ul>
       )}
-      <input type="hidden" {...register(name)} value={selectedOption} />
+      <input type="hidden" {...register(name)} value={categoryValue} />
       {errors[name] && (
         <p className={css.errorMessage}>
           <MdError size={16} /> {errors[name]?.message}

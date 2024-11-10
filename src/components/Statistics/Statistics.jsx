@@ -13,7 +13,7 @@ export default function Statistics() {
   useEffect(() => {
     dispatch(getStatistics());
     dispatch(getTasks());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={css.studyContainer}>
