@@ -6,6 +6,6 @@ export const selectTasks = (state) => state.words.tasks;
 
 export const selectDictionary = (state) => state.words.dictionary;
 
-export const selectCurrentWord = (state) => state.words.currentWord;
+export const selectRecomendWords = (state) => state.words.recomendWords;
 
-export const selectFilterDictionaryParams = (state) => state.words.filterDictionaryParams;
+export const selectCurrentWord = (state) => state.words.currentWord;

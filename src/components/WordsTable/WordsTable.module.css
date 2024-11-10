@@ -116,3 +116,25 @@ td:nth-child(5) {
   justify-content: space-between;
   width: 88px;
 }
+
+.addWordBtn {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--black);
+  gap: 8px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  transition: color var(--animation);
+}
+
+.addWordBtn:hover {
+  color: var(--green);
+}
+
+.addWordBtnIcon {
+  stroke: var(--green);
+}

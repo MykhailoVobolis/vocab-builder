@@ -5,18 +5,32 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { selectDictionary } from "../../redux/words/selectors.js";
+import { selectDictionary, selectRecomendWords } from "../../redux/words/selectors.js";
+import { selectFilterDictionary, selectFilterRecomend } from "../../redux/filters/selectors.js";
+import { changeDictionaryPage, changeRecomendPage } from "../../redux/filters/slice.js";
+import { useLocation } from "react-router-dom";
 
 import css from "./WordsPagination.module.css";
-import { changeDictionaryPage } from "../../redux/words/slice.js";
 
 export default function WordsPagination() {
   const dispatch = useDispatch();
-  const { totalPages, page } = useSelector(selectDictionary);
+  const dictionaryData = useSelector(selectDictionary);
+  const recommendData = useSelector(selectRecomendWords);
+  const filterDictionaryData = useSelector(selectFilterDictionary);
+  const filterRecommendData = useSelector(selectFilterRecomend);
+
+  const { pathname } = useLocation();
+  const isDictionary = pathname.includes("dictionary");
+
+  const { totalPages } = isDictionary ? dictionaryData : recommendData;
+  const { page } = isDictionary ? filterDictionaryData : filterRecommendData;
 
   // Функція обробки зміни сторінки
   const handlePageChange = (event, value) => {
-    dispatch(changeDictionaryPage(value));
+    if (isDictionary) {
+      dispatch(changeDictionaryPage(value));
+    }
+    dispatch(changeRecomendPage(value));
   };
 
   return (

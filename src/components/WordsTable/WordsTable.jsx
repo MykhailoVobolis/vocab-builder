@@ -6,6 +6,10 @@ import WordBarPopover from "../WordBarPopover/WordBarPopover.jsx";
 import ProgressBar from "../ProgressBar/ProgressBar.jsx";
 import { addCurrentWord } from "../../redux/words/slice.js";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { addWord, getStatistics } from "../../redux/words/operations.js";
+import toast from "react-hot-toast";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 import css from "./WordsTable.module.css";
 
@@ -14,10 +18,25 @@ const columnHelper = createColumnHelper();
 export default function WordsTable({ words }) {
   const [activeWordId, setActiveWordId] = useState(null); // Зберігаємо ID активного рядка
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
+  const isDictionary = pathname.includes("dictionary");
 
   function toggleMenu(rowData) {
     dispatch(addCurrentWord(rowData));
     setActiveWordId((prevWordId) => (prevWordId === rowData._id ? null : rowData._id));
+  }
+
+  function addToDictionary(rowData) {
+    // Створення нового об'єкта без властивості _id
+    const { _id, ...newWord } = rowData;
+    dispatch(addWord(newWord))
+      .unwrap()
+      .then((response) => {
+        dispatch(getStatistics());
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   }
 
   // Закриття WordBarPopover при кліку у будь яке місце екрану
@@ -64,31 +83,43 @@ export default function WordsTable({ words }) {
       cell: (info) => capitalizeFirstLetter(info.getValue()),
     }),
 
-    columnHelper.accessor("progress", {
-      header: () => "Progress",
-      cell: (info) => (
-        <div className={css.progressWrapper}>
-          <p>{`${info.getValue()}%`}</p>
-          <ProgressBar
-            progress={info.getValue()}
-            size={26}
-            dark="var(--progressDark)"
-            light="var(--progressLight)"
-            thicknessDark={6}
-            thicknessLight={4}
-          />
-        </div>
-      ),
-    }),
+    // Умовне додавання колонки "Progress"
+    ...(isDictionary
+      ? [
+          columnHelper.accessor("progress", {
+            header: () => "Progress",
+            cell: (info) => (
+              <div className={css.progressWrapper}>
+                <p>{`${info.getValue()}%`}</p>
+                <ProgressBar
+                  progress={info.getValue()}
+                  size={26}
+                  dark="var(--progressDark)"
+                  light="var(--progressLight)"
+                  thicknessDark={6}
+                  thicknessLight={4}
+                />
+              </div>
+            ),
+          }),
+        ]
+      : []),
 
     columnHelper.display({
       id: "button", // ID для колонки
       header: () => "", // Заголовок колонки
       cell: (info) => (
         <div className={css.actionBardWrapper}>
-          <button className={css.actionButton} onClick={() => toggleMenu(info.row.original)}>
-            ...
-          </button>
+          {isDictionary ? (
+            <button className={css.actionButton} onClick={() => toggleMenu(info.row.original)}>
+              ...
+            </button>
+          ) : (
+            <button className={css.addWordBtn} onClick={() => addToDictionary(info.row.original)}>
+              Add to dictionary
+              <HiOutlineArrowNarrowRight className={css.addWordBtnIcon} size={20} />
+            </button>
+          )}
           {activeWordId === info.row.original._id && (
             <WordBarPopover toggleMenu={() => setActiveWordId(null)} wordId={activeWordId} />
           )}

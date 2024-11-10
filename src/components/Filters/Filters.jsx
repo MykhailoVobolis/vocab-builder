@@ -4,17 +4,25 @@ import debounce from "lodash.debounce";
 import SearchInputField from "../SearchInputField/SearchInputField.jsx";
 import RadioField from "../RadioField/RadioField.jsx";
 import CustomSelect from "../CustomSelect/CustomSelect.jsx";
-import { selectCategories, selectFilterDictionaryParams } from "../../redux/words/selectors.js";
+import { selectCategories } from "../../redux/words/selectors.js";
 import { useDispatch, useSelector } from "react-redux";
-import { getWordsOwn } from "../../redux/words/operations.js";
-import { changeFilterParams } from "../../redux/words/slice.js";
+import { getAllWords, getWordsOwn } from "../../redux/words/operations.js";
+import { useLocation } from "react-router-dom";
+import { selectFilterDictionary, selectFilterRecomend } from "../../redux/filters/selectors.js";
+import { changeFilterDictionary } from "../../redux/filters/slice.js";
 
 import css from "./Filters.module.css";
 
 export default function Filters() {
   const dispatch = useDispatch();
+  const dictionaryParams = useSelector(selectFilterDictionary);
+  const recomendParams = useSelector(selectFilterRecomend);
   const categories = useSelector(selectCategories);
-  const filterParams = useSelector(selectFilterDictionaryParams);
+
+  const { pathname } = useLocation();
+  const isDictionary = pathname.includes("dictionary");
+
+  const filterParams = isDictionary ? dictionaryParams : recomendParams;
 
   const { keyword: keywordValue, category: categoryValue, isIrregular: isIrregularValue } = filterParams;
 
@@ -40,14 +48,16 @@ export default function Filters() {
     const filterData = {
       keyword: data.keyword?.trim(),
       category: data.category,
-      ...(data.category === "verb" && { isIrregular: data.isIrregular }),
+      ...(data.category === "verb" ? { isIrregular: data.isIrregular } : { isIrregular: null }),
     };
-    dispatch(changeFilterParams(filterData));
+    dispatch(changeFilterDictionary(filterData));
   };
 
   useEffect(() => {
-    dispatch(getWordsOwn(filterParams));
-  }, [filterParams, dispatch]);
+    pathname.includes("dictionary") ? dispatch(getWordsOwn(filterParams)) : dispatch(getAllWords(filterParams));
+
+    // dispatch(getWordsOwn(filterParams));
+  }, [dispatch, filterParams]);
 
   // Создаем debounced версию onSubmit
   const debouncedSubmit = debounce(handleSubmit(onSubmit), 300);

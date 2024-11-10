@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 import { authReduser } from "./auth/slice.js";
 import { wordsReduser } from "./words/slice.js";
 import { modalReducer } from "./modal/slice.js";
+import { filtersReduser } from "./filters/slice.js";
 
 // Збереження токіна в Local Storage
 const authPersistConfig = {
@@ -20,6 +21,7 @@ export const store = configureStore({
     auth: persistedAuthReducer,
     words: wordsReduser,
     modal: modalReducer,
+    filters: filtersReduser,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

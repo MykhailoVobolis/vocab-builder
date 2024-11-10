@@ -81,3 +81,16 @@ export const editWord = createAsyncThunk("words/editWord", async (currentWord, t
     return thunkAPI.rejectWithValue({ message: errorMessage });
   }
 });
+
+// Список рекомендованих слів
+export const getAllWords = createAsyncThunk("words/getAllWords", async (filterParams, thunkAPI) => {
+  try {
+    const response = await axios.get("/words/all", {
+      params: filterParams,
+    });
+    return response.data;
+  } catch (error) {
+    const errorMessage = handleError(error);
+    return thunkAPI.rejectWithValue({ message: errorMessage });
+  }
+});

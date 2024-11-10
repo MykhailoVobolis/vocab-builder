@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCategories, getStatistics, getTasks, getWordsOwn } from "./operations.js";
+import { getAllWords, getCategories, getStatistics, getTasks, getWordsOwn } from "./operations.js";
 
 const handlePending = (state) => {
   state.loading = true;
@@ -23,11 +23,11 @@ const wordsSlise = createSlice({
       page: 1,
       perPage: 0,
     },
-    filterDictionaryParams: {
-      keyword: "",
-      category: "",
-      isIrregular: null,
+    recomendWords: {
+      results: [],
+      totalPages: 1,
       page: 1,
+      perPage: 0,
     },
     currentWord: {},
     error: null,
@@ -35,12 +35,6 @@ const wordsSlise = createSlice({
   reducers: {
     addCurrentWord: (state, action) => {
       state.currentWord = action.payload;
-    },
-    changeFilterParams: (state, action) => {
-      state.filterDictionaryParams = { ...state.filterParams, ...action.payload };
-    },
-    changeDictionaryPage: (state, action) => {
-      state.filterDictionaryParams.page = action.payload;
     },
   },
 
@@ -76,7 +70,15 @@ const wordsSlise = createSlice({
         state.error = null;
         state.dictionary = action.payload;
       })
-      .addCase(getWordsOwn.rejected, handleRejected);
+      .addCase(getWordsOwn.rejected, handleRejected)
+
+      .addCase(getAllWords.pending, handlePending)
+      .addCase(getAllWords.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.recomendWords = action.payload;
+      })
+      .addCase(getAllWords.rejected, handleRejected);
   },
 });
 
