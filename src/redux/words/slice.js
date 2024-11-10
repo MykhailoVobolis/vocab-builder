@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCategories, getStatistics, getTasks } from "./operations.js";
+import { getCategories, getStatistics, getTasks, getWordsOwn } from "./operations.js";
 
 const handlePending = (state) => {
   state.loading = true;
@@ -17,8 +17,21 @@ const wordsSlise = createSlice({
     categories: [],
     wordsToStudy: 0,
     tasks: [],
+    dictionary: {
+      results: [],
+      totalPages: 1,
+      page: 1,
+      perPage: 0,
+    },
+    currentWord: {},
     error: null,
   },
+  reducers: {
+    addCurrentWord: (state, action) => {
+      state.currentWord = action.payload;
+    },
+  },
+
   extraReducers: (builder) => {
     builder
       .addCase(getCategories.pending, handlePending)
@@ -43,8 +56,17 @@ const wordsSlise = createSlice({
         state.error = null;
         state.tasks = action.payload.tasks;
       })
-      .addCase(getTasks.rejected, handleRejected);
+      .addCase(getTasks.rejected, handleRejected)
+
+      .addCase(getWordsOwn.pending, handlePending)
+      .addCase(getWordsOwn.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.dictionary = action.payload;
+      })
+      .addCase(getWordsOwn.rejected, handleRejected);
   },
 });
 
 export const wordsReduser = wordsSlise.reducer;
+export const { addCurrentWord } = wordsSlise.actions;

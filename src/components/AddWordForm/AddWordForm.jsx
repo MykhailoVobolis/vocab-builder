@@ -9,7 +9,7 @@ import InputWordField from "../InputWordField/InputWordField.jsx";
 import { wordsSchema } from "../../utils/validationSchemas.js";
 import RadioWordField from "../RadioWordField/RadioWordField.jsx";
 import { useEffect } from "react";
-import { addWord, getStatistics } from "../../redux/words/operations.js";
+import { addWord, getStatistics, getWordsOwn } from "../../redux/words/operations.js";
 import toast from "react-hot-toast";
 
 import css from "./AddWordForm.module.css";
@@ -45,9 +45,9 @@ export default function AddWordForm({ onClose }) {
     dispatch(addWord(addWordData))
       .unwrap()
       .then((response) => {
-        dispatch(getStatistics());
         methods.reset();
         onClose();
+        return Promise.all([dispatch(getStatistics()), dispatch(getWordsOwn())]);
       })
       .catch((error) => {
         toast.error(error.message);

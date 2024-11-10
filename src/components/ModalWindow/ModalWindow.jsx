@@ -2,13 +2,10 @@ import Modal from "react-modal";
 import { IoClose } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "../../redux/modal/slice.js";
-import { selectStateModal } from "../../redux/modal/selectors.js";
-import AddWordModal from "../AddWordModal/AddWordModal.jsx";
+import { selectStateModal, selectTypeModal } from "../../redux/modal/selectors.js";
 
-// import LoginModal from "../LoginModal/LoginModal.jsx";
-// import RegistrationModal from "../RegistrationModal/RegistrationModal.jsx";
-// import BookModal from "../BookModal/BookModal.jsx";
-// import AuthMessage from "../AuthMessage/AuthMessage.jsx";
+import AddWordModal from "../AddWordModal/AddWordModal.jsx";
+import EditWordModal from "../EditWordModal/EditWordModal.jsx";
 
 import css from "./ModalWindow.module.css";
 
@@ -36,25 +33,21 @@ const modalStyles = {
   },
 };
 
-// function addContentModal(modalType) {
-//   switch (modalType) {
-//     case "login":
-//       return <LoginModal />;
-//     case "register":
-//       return <RegistrationModal />;
-//     case "booking":
-//       return <BookModal />;
-//     case "message":
-//       return <AuthMessage />;
-//     default:
-//       return null;
-//   }
-// }
+function addContentModal(modalType, onClose) {
+  switch (modalType) {
+    case "addWord":
+      return <AddWordModal onClose={onClose} />;
+    case "editWord":
+      return <EditWordModal onClose={onClose} />;
+    default:
+      return null;
+  }
+}
 
 export default function ModalWindow() {
   const dispatch = useDispatch();
   const isOpen = useSelector(selectStateModal);
-  //   const modalType = useSelector(selectTypeModal);
+  const modalType = useSelector(selectTypeModal);
 
   const onClose = () => {
     dispatch(closeModal());
@@ -74,8 +67,7 @@ export default function ModalWindow() {
       <button className={css.closeBtn} onClick={onClose}>
         <IoClose className={css.closeIcon} size={32} />
       </button>
-      <AddWordModal onClose={onClose} />
-      {/* {addContentModal(modalType)} */}
+      {addContentModal(modalType, onClose)}
     </Modal>
   );
 }

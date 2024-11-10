@@ -41,6 +41,9 @@
   --main-white: #ffffff;
   --shadow: rgba(18, 20, 23, 0.08);
   --description-form: rgba(252, 252, 252, 0.8);
+  --border-table: #dbdbdb;
+  --progressDark: #2bd627;
+  --progressLight: #d4f8d3;
 
   font-family: MacPawFixelDisplay, sans-serif;
   line-height: 1.5;

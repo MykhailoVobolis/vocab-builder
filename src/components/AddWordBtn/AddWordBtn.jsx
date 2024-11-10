@@ -8,7 +8,7 @@ export default function AddWordBtn() {
   const dispatch = useDispatch();
 
   return (
-    <button className={css.addWordBtn} type="button" onClick={() => dispatch(openModal())}>
+    <button className={css.addWordBtn} type="button" onClick={() => dispatch(openModal("addWord"))}>
       <span>Add word</span>
       <FiPlus className={css.addWordIcon} size={20} />
     </button>

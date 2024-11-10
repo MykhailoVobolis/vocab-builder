@@ -45,3 +45,39 @@ export const addWord = createAsyncThunk("words/addWord", async (newWord, thunkAP
     return thunkAPI.rejectWithValue({ message: errorMessage });
   }
 });
+
+// Список слів юзера
+export const getWordsOwn = createAsyncThunk("words/getWordsOwn", async (filterParams, thunkAPI) => {
+  try {
+    const response = await axios.get("/words/own", {
+      params: filterParams,
+    });
+    return response.data;
+  } catch (error) {
+    const errorMessage = handleError(error);
+    return thunkAPI.rejectWithValue({ message: errorMessage });
+  }
+});
+
+// Видалення слова
+export const deleteWord = createAsyncThunk("words/deleteWord", async (wordId, thunkAPI) => {
+  try {
+    const response = await axios.delete(`/words/delete/${wordId}`);
+    return response.data;
+  } catch (error) {
+    const errorMessage = handleError(error);
+    return thunkAPI.rejectWithValue({ message: errorMessage });
+  }
+});
+
+// Зміна слова
+export const editWord = createAsyncThunk("words/editWord", async (currentWord, thunkAPI) => {
+  const { wordId, ...saveWord } = currentWord;
+  try {
+    const response = await axios.patch(`/words/edit/${wordId}`, saveWord);
+    return response.data;
+  } catch (error) {
+    const errorMessage = handleError(error);
+    return thunkAPI.rejectWithValue({ message: errorMessage });
+  }
+});

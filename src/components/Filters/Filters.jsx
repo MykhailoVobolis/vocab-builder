@@ -5,11 +5,13 @@ import SearchInputField from "../SearchInputField/SearchInputField.jsx";
 import RadioField from "../RadioField/RadioField.jsx";
 import CustomSelect from "../CustomSelect/CustomSelect.jsx";
 import { selectCategories } from "../../redux/words/selectors.js";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import css from "./Filters.module.css";
+import { getWordsOwn } from "../../redux/words/operations.js";
 
 export default function Filters() {
+  const dispatch = useDispatch();
   const categories = useSelector(selectCategories);
 
   const methods = useForm();
@@ -25,11 +27,12 @@ export default function Filters() {
   }, [category, methods]);
 
   const onSubmit = (data) => {
-    const trimmedData = {
-      ...data,
+    const filterData = {
       keyword: data.keyword?.trim(),
+      category: data.category,
+      ...(data.category === "verb" && { isIrregular: data.isIrregular }),
     };
-    console.log("Form Data:", trimmedData);
+    dispatch(getWordsOwn(filterData));
   };
 
   // Создаем debounced версию onSubmit

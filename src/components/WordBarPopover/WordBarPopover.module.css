@@ -1,0 +1,35 @@
+.popoverContainer {
+  border-radius: 15px;
+  padding: 12px 24px;
+  box-shadow: 0 4px 47px 0 var(--shadow);
+  background: var(--main-white);
+  position: absolute;
+  top: -55px;
+  left: -20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btnIcon {
+  stroke: var(--green);
+  fill: transparent;
+}
+
+.popoverBtn {
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  max-width: 100%;
+  align-items: center;
+  background-color: transparent;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--black);
+  border: none;
+  cursor: pointer;
+}
