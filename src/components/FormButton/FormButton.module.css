@@ -19,20 +19,30 @@
 }
 
 .wordsFormButton {
-  display: block;
   color: var(--black);
-  border-radius: 100px;
-  border: none;
-  width: 100%;
   height: 56px;
   font-family: inherit;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.56;
   background-color: var(--white);
   transition: color var(--animation);
+  margin-bottom: 0px;
 }
 
 .wordsFormButton:hover {
   color: var(--accent-secondary);
+  background-color: var(--white);
+}
+
+.answerSaveButton {
+  height: 56px;
+  margin-bottom: 0px;
+}
+
+button:disabled {
+  background-color: var(--text-semitransparent);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button:disabled:hover {
+  background-color: var(--text-semitransparent);
 }

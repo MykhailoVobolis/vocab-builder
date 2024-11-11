@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const filtersSlise = createSlice({
+const filtersSlice = createSlice({
   name: "filters",
   initialState: {
     filterDictionary: {
@@ -32,6 +32,6 @@ const filtersSlise = createSlice({
   },
 });
 
-export const filtersReduser = filtersSlise.reducer;
+export const filtersReduser = filtersSlice.reducer;
 export const { changeFilterDictionary, changeDictionaryPage, changeFilterRecomend, changeRecomendPage } =
-  filtersSlise.actions;
+  filtersSlice.actions;

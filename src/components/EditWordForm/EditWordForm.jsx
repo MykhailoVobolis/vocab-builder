@@ -54,7 +54,7 @@ export default function EditWordForm({ onClose, currentWord }) {
           <InputWordField name="en" label="English" placeholder="Work" iconName="icon-unitedKingdom" />
         </div>
         <div className={css.buttonGroup}>
-          <FormButton btnStyles={"addWord"}>Save</FormButton>
+          <FormButton variant="wordsFormButton">Save</FormButton>
           <CancelButton onClose={onClose}>Cancel</CancelButton>
         </div>
       </form>

@@ -69,7 +69,7 @@ export default function AddWordForm({ onClose }) {
           <InputWordField name="en" label="English" placeholder="Work" iconName="icon-unitedKingdom" />
         </div>
         <div className={css.buttonGroup}>
-          <FormButton btnStyles={"addWord"}>Add</FormButton>
+          <FormButton variant="wordsFormButton">Add</FormButton>
           <CancelButton onClose={onClose}>Cancel</CancelButton>
         </div>
       </form>

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getStatistics, getTasks } from "../../redux/words/operations.js";
+import { getStatistics } from "../../redux/words/operations.js";
 
 import css from "./Statistics.module.css";
 import { selectWordsToStudy } from "../../redux/words/selectors.js";
@@ -12,7 +12,6 @@ export default function Statistics() {
 
   useEffect(() => {
     dispatch(getStatistics());
-    dispatch(getTasks());
   }, [dispatch]);
 
   return (

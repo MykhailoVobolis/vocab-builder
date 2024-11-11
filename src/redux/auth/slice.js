@@ -11,7 +11,7 @@ const handleRejected = (state) => {
 };
 
 // Стан даних про користувача
-const authSlise = createSlice({
+const authSlice = createSlice({
   name: "auth",
   initialState: {
     user: {
@@ -78,4 +78,4 @@ const authSlise = createSlice({
       });
   },
 });
-export const authReduser = authSlise.reducer;
+export const authReduser = authSlice.reducer;

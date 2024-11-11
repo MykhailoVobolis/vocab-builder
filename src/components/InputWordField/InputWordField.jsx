@@ -21,7 +21,7 @@ export default function InputWordField({ name, label, type = "text", placeholder
         className={`${css.inputField} ${errors[name] ? css.inputError : ""}`}
       />
       <label className={css.label} htmlFor={name}>
-        <SvgIcon name={iconName} width={32} height={32} className={css.icon} />
+        <SvgIcon name={iconName} width={32} height={32} />
         <span>{label}</span>
       </label>
       {errors[name] && (

@@ -1,8 +1,9 @@
+import clsx from "clsx";
 import css from "./FormButton.module.css";
 
-export default function FormButton({ children, btnStyles }) {
+export default function FormButton({ variant, children, disabled = false }) {
   return (
-    <button type="submit" className={btnStyles === "addWord" ? css.wordsFormButton : css.formButton}>
+    <button className={clsx(css.formButton, css[variant])} type="submit" disabled={disabled}>
       {children}
     </button>
   );

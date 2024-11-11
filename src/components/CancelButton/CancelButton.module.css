@@ -17,3 +17,14 @@
   color: var(--black);
   background-color: var(--white);
 }
+
+.answerCancelButton {
+  background-color: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.answerCancelButton:hover {
+  color: var(--white);
+  background-color: var(--green);
+}

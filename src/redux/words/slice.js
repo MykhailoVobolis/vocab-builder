@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllWords, getCategories, getStatistics, getTasks, getWordsOwn } from "./operations.js";
+import { getAllWords, getCategories, getStatistics, getWordsOwn } from "./operations.js";
 
 const handlePending = (state) => {
   state.loading = true;
@@ -11,12 +11,11 @@ const handleRejected = (state) => {
 };
 
 // Стан даних про користувача
-const wordsSlise = createSlice({
+const wordsSlice = createSlice({
   name: "words",
   initialState: {
     categories: [],
     wordsToStudy: 0,
-    tasks: [],
     dictionary: {
       results: [],
       totalPages: 1,
@@ -56,14 +55,6 @@ const wordsSlise = createSlice({
       })
       .addCase(getStatistics.rejected, handleRejected)
 
-      .addCase(getTasks.pending, handlePending)
-      .addCase(getTasks.fulfilled, (state, action) => {
-        state.loading = false;
-        state.error = null;
-        state.tasks = action.payload.tasks;
-      })
-      .addCase(getTasks.rejected, handleRejected)
-
       .addCase(getWordsOwn.pending, handlePending)
       .addCase(getWordsOwn.fulfilled, (state, action) => {
         state.loading = false;
@@ -82,5 +73,5 @@ const wordsSlise = createSlice({
   },
 });
 
-export const wordsReduser = wordsSlise.reducer;
-export const { addCurrentWord, changeFilterParams, changeDictionaryPage } = wordsSlise.actions;
+export const wordsReduser = wordsSlice.reducer;
+export const { addCurrentWord, changeFilterParams, changeDictionaryPage } = wordsSlice.actions;

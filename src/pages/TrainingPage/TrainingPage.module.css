@@ -1,0 +1,25 @@
+.pageContainer {
+  padding: 62px 0 48px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progressBarWrapper {
+  position: relative;
+  margin-left: auto;
+}
+
+.progressValue {
+  font-weight: 500;
+  position: absolute;
+  top: 17px;
+  left: 19px;
+}

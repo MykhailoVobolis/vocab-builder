@@ -5,6 +5,7 @@ import { authReduser } from "./auth/slice.js";
 import { wordsReduser } from "./words/slice.js";
 import { modalReducer } from "./modal/slice.js";
 import { filtersReduser } from "./filters/slice.js";
+import { trainingReduser } from "./training/slice.js";
 
 // Збереження токіна в Local Storage
 const authPersistConfig = {
@@ -22,6 +23,7 @@ export const store = configureStore({
     words: wordsReduser,
     modal: modalReducer,
     filters: filtersReduser,
+    training: trainingReduser,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

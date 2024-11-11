@@ -24,17 +24,6 @@ export const getStatistics = createAsyncThunk("words/getStatistics", async (_, t
   }
 });
 
-// Список завдань
-export const getTasks = createAsyncThunk("words/getTasks", async (_, thunkAPI) => {
-  try {
-    const response = await axios.get("/words/tasks");
-    return response.data;
-  } catch (error) {
-    const errorMessage = handleError(error);
-    return thunkAPI.rejectWithValue({ message: errorMessage });
-  }
-});
-
 // Додавання нового слова
 export const addWord = createAsyncThunk("words/addWord", async (newWord, thunkAPI) => {
   try {
