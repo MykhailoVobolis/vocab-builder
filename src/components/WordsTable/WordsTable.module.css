@@ -67,30 +67,39 @@ tbody tr:last-child td:last-child {
   border-bottom-right-radius: 8px;
 }
 
-/* Задати фіксовану ширину для окремих колонок */
-th:nth-child(1),
-td:nth-child(1) {
+/* Задати фіксовану ширину для окремих колонок DictionaryTab*/
+.columnDictionary-1 {
   width: 280px;
 }
 
-th:nth-child(2),
-td:nth-child(2) {
+.columnDictionary-2 {
   width: 274px;
 }
 
-th:nth-child(3),
-td:nth-child(3) {
+.columnDictionary-3 {
   width: 260px;
 }
 
-th:nth-child(4),
-td:nth-child(4) {
+.columnDictionary-4 {
   width: 254px;
 }
 
 td:nth-child(5) {
   display: flex;
   justify-content: center;
+}
+
+/* Задати фіксовану ширину для окремих колонок RecomendTab*/
+.columnRecommend-1 {
+  width: 372px;
+}
+
+.columnRecommend-2 {
+  width: 363px;
+}
+
+.columnRecommend-3 {
+  width: 260px;
 }
 
 /* Стиль для кнопок */
@@ -137,4 +146,7 @@ td:nth-child(5) {
 
 .addWordBtnIcon {
   stroke: var(--green);
+}
+
+.column-1 {
 }

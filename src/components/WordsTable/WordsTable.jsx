@@ -143,8 +143,12 @@ export default function WordsTable({ words }) {
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <th key={header.id}>
+                {headerGroup.headers.map((header, index) => (
+                  <th
+                    key={header.id}
+                    className={
+                      isDictionary ? css[`columnDictionary-${index + 1}`] : css[`columnRecommend-${index + 1}`]
+                    }>
                     {/* Рендерить заголовок колонки або залишає комірку порожньою */}
                     {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                   </th>
@@ -156,8 +160,12 @@ export default function WordsTable({ words }) {
           <tbody>
             {table.getRowModel().rows.map((row) => (
               <tr key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id}>
+                {row.getVisibleCells().map((cell, index) => (
+                  <td
+                    key={cell.id}
+                    className={
+                      isDictionary ? css[`columnDictionary-${index + 1}`] : css[`columnRecommend-${index + 1}`]
+                    }>
                     {/* Рендерить значення комірки */}
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
