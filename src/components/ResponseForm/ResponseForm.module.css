@@ -6,12 +6,12 @@
   padding: 22px;
   background-color: var(--white);
   border-radius: 8px 0 0 0;
+  position: relative;
 }
 
 .formWrapper {
   display: flex;
   flex-direction: column;
-  gap: 204px;
   width: 70%;
 }
 
@@ -24,6 +24,7 @@
   outline: transparent;
   outline-offset: 4px;
   border: none;
+  margin-bottom: 204px;
 }
 
 .inputAnswer::placeholder {
@@ -51,4 +52,14 @@
 
 .nextBtnIcon {
   stroke: var(--green);
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 416px;
+  position: absolute;
+  left: -18px;
+  top: 400px;
 }

@@ -1,0 +1,13 @@
+.wordsListContainer {
+  width: 50%;
+}
+
+.listItem {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--white);
+}
+
+.description {
+  color: var(--description-result-test);
+}

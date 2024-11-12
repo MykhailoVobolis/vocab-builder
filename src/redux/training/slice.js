@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getTasks } from "./operations.js";
+import { getTasks, sendRespons } from "./operations.js";
 
 const handlePending = (state) => {
   state.loading = true;
@@ -16,6 +16,7 @@ const trainingSlice = createSlice({
   initialState: {
     tasks: [],
     response: [],
+    resultsTraining: [],
   },
   reducers: {
     addAnswer: (state, action) => {
@@ -23,6 +24,9 @@ const trainingSlice = createSlice({
     },
     clearResponse: (state) => {
       state.response = [];
+    },
+    clearResultsTraining: (state) => {
+      state.resultsTraining = [];
     },
   },
   extraReducers: (builder) => {
@@ -33,9 +37,17 @@ const trainingSlice = createSlice({
         state.error = null;
         state.tasks = action.payload.tasks;
       })
-      .addCase(getTasks.rejected, handleRejected);
+      .addCase(getTasks.rejected, handleRejected)
+
+      .addCase(sendRespons.pending, handlePending)
+      .addCase(sendRespons.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.resultsTraining = action.payload;
+      })
+      .addCase(sendRespons.rejected, handleRejected);
   },
 });
 
 export const trainingReduser = trainingSlice.reducer;
-export const { addAnswer, clearResponse } = trainingSlice.actions;
+export const { addAnswer, clearResponse, clearResultsTraining } = trainingSlice.actions;

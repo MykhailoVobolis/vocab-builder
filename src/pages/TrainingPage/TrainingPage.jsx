@@ -4,6 +4,7 @@ import { getTasks } from "../../redux/training/operations.js";
 import { selectTasks } from "../../redux/training/selectors.js";
 import ProgressBar from "../../components/ProgressBar/ProgressBar.jsx";
 import TrainingRoom from "../../components/TrainingRoom/TrainingRoom.jsx";
+import { useState } from "react";
 
 import css from "./TrainingPage.module.css";
 
@@ -11,10 +12,18 @@ export default function TrainingPage() {
   const dispatch = useDispatch();
   const tasks = useSelector(selectTasks);
 
-  const totalTasks = tasks.length;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
 
-  const completedTasks = 8; // Кількість виконаних задач
-  const progressPercentage = (completedTasks / totalTasks) * 100;
+  const switchTask = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1 < tasks.length ? prevIndex + 1 : prevIndex));
+    setProgress((prevProgress) => (prevProgress + 1 <= tasks.length ? prevProgress + 1 : prevProgress));
+  };
+
+  const currentTask = tasks[currentIndex];
+
+  const totalTasks = tasks.length;
+  const progressPercentage = totalTasks > 0 ? (progress / totalTasks) * 100 : 0;
 
   useEffect(() => {
     dispatch(getTasks());
@@ -33,9 +42,9 @@ export default function TrainingPage() {
               thicknessDark={3}
               thicknessLight={4}
             />
-            <p className={css.progressValue}>{totalTasks}</p>
+            <p className={css.progressValue}>{progress}</p>
           </div>
-          <TrainingRoom tasks={tasks} />
+          <TrainingRoom tasks={tasks} currentTask={currentTask} switchTask={switchTask} progress={progress} />
         </div>
       )}
     </section>

@@ -18,8 +18,13 @@
 }
 
 .progressValue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
   font-weight: 500;
   position: absolute;
-  top: 17px;
-  left: 19px;
+  top: 0px;
+  left: 0px;
 }

@@ -12,10 +12,3 @@
   height: 338px;
   background-color: var(--main-white);
 }
-
-.buttonGroup {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 416px;
-}
