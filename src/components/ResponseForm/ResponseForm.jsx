@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch, useSelector } from "react-redux";
 import { addAnswer, clearResponse } from "../../redux/training/slice.js";
 import LanguageFlagWithName from "../LanguageFlagWithName/LanguageFlagWithName.jsx";
@@ -9,21 +10,36 @@ import toast from "react-hot-toast";
 import FormButton from "../FormButton/FormButton.jsx";
 import CancelButton from "../CancelButton/CancelButton.jsx";
 import { openModal } from "../../redux/modal/slice.js";
+import { englishWordSchema, ukrainianWordSchema } from "../../utils/validationSchemas.js";
+import { MdError } from "react-icons/md";
 
 import css from "./ResponseForm.module.css";
 
 export default function ResponseForm({ currentTask, switchTask, handleClose, progress }) {
   const dispatch = useDispatch();
-  const { register, handleSubmit, reset, getValues } = useForm();
-
   const totalTasks = useSelector(selectTotalTasks);
   const totalRespons = useSelector(selectTotalResponse);
   const userAnswers = useSelector(selectResponse);
 
   const { _id, en, ua, task } = currentTask;
+
+  const isEnglish = task === "en";
+
   const placeholderText = ua ? "Enter task here" : "Введіть переклад";
-  const iconName = task === "en" ? "icon-unitedKingdom" : "icon-ukraine";
+  const iconName = isEnglish ? "icon-unitedKingdom" : "icon-ukraine";
   const language = ua ? "English" : "Ukrainian";
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(isEnglish ? englishWordSchema : ukrainianWordSchema),
+    mode: "all",
+    reValidateMode: "onBlur",
+  });
 
   const handleNextClick = () => {
     if (totalRespons >= totalTasks) {
@@ -83,11 +99,17 @@ export default function ResponseForm({ currentTask, switchTask, handleClose, pro
         <input
           className={css.inputAnswer}
           type="text"
-          {...register("answer", { required: true })}
+          {...register("answer")}
           placeholder={placeholderText}
           onKeyDown={handleKeyDown}
           disabled={progress >= totalTasks}
         />
+        {errors.answer && (
+          <p className={css.errorMessage}>
+            <MdError size={16} />
+            {errors.answer.message}
+          </p>
+        )}
         {progress < totalTasks - 1 && (
           <button className={css.nextBtn} type="button" onClick={handleNextClick}>
             Next

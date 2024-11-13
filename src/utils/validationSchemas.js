@@ -53,3 +53,17 @@ export const editWordSchema = yup.object().shape({
     .required("Please enter the English word")
     .matches(regex.enWordRegexp, "Incorrect language. Please use English"),
 });
+
+export const ukrainianWordSchema = yup.object().shape({
+  answer: yup
+    .string()
+    .required("Please enter the Ukrainian word")
+    .matches(regex.uaWordRegexp, "Invalid language. Please use Ukrainian"),
+});
+
+export const englishWordSchema = yup.object().shape({
+  answer: yup
+    .string()
+    .required("Please enter the English word")
+    .matches(regex.enWordRegexp, "Incorrect language. Please use English"),
+});

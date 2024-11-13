@@ -16,6 +16,7 @@
 }
 
 .inputAnswer {
+  position: relative;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.5;
@@ -62,4 +63,14 @@
   position: absolute;
   left: -18px;
   top: 400px;
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  position: absolute;
+  top: 56px;
+  color: var(--error);
 }
