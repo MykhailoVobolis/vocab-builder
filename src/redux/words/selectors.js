@@ -7,3 +7,5 @@ export const selectDictionary = (state) => state.words.dictionary;
 export const selectRecomendWords = (state) => state.words.recomendWords;
 
 export const selectCurrentWord = (state) => state.words.currentWord;
+
+export const selectLoading = (state) => state.words.loading;

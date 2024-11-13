@@ -17,8 +17,8 @@ import css from "./WordsTable.module.css";
 const columnHelper = createColumnHelper();
 
 export default function WordsTable({ words }) {
-  const [activeWordId, setActiveWordId] = useState(null); // Зберігаємо ID активного рядка
   const dispatch = useDispatch();
+  const [activeWordId, setActiveWordId] = useState(null); // Зберігаємо ID активного рядка
   const { pathname } = useLocation();
   const isDictionary = pathname.includes("dictionary");
 

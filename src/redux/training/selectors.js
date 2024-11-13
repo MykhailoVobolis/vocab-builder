@@ -2,6 +2,8 @@ import { createSelector } from "@reduxjs/toolkit";
 
 export const selectTasks = (state) => state.training.tasks;
 
+export const selectLoading = (state) => state.training.loading;
+
 export const selectResponse = (state) => state.training.response;
 
 export const selectResults = (state) => state.training.resultsTraining;

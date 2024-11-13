@@ -1,12 +1,13 @@
 import { useFormContext } from "react-hook-form";
 import { useSelector } from "react-redux";
-import { selectFilterDictionary } from "../../redux/filters/selectors.js";
+import { selectFilterDictionary, selectFilterRecomend } from "../../redux/filters/selectors.js";
 
 import css from "./RadioField.module.css";
 
-export default function RadioField({ name, label }) {
+export default function RadioField({ name, label, isDictionary }) {
   const { register } = useFormContext();
-  const { isIrregular } = useSelector(selectFilterDictionary);
+
+  const { isIrregular } = useSelector(isDictionary ? selectFilterDictionary : selectFilterRecomend);
 
   return (
     <div>

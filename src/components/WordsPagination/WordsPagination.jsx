@@ -15,16 +15,10 @@ import css from "./WordsPagination.module.css";
 
 export default function WordsPagination() {
   const dispatch = useDispatch();
-  const dictionaryData = useSelector(selectDictionary);
-  const recommendData = useSelector(selectRecomendWords);
-  const filterDictionaryData = useSelector(selectFilterDictionary);
-  const filterRecommendData = useSelector(selectFilterRecomend);
-
   const { pathname } = useLocation();
   const isDictionary = pathname.includes("dictionary");
-
-  const { totalPages } = isDictionary ? dictionaryData : recommendData;
-  const { page } = isDictionary ? filterDictionaryData : filterRecommendData;
+  const { totalPages } = useSelector(isDictionary ? selectDictionary : selectRecomendWords);
+  const { page } = useSelector(isDictionary ? selectFilterDictionary : selectFilterRecomend);
 
   // Функція обробки зміни сторінки
   const handlePageChange = (event, value) => {

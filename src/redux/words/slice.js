@@ -29,6 +29,7 @@ const wordsSlice = createSlice({
       perPage: 0,
     },
     currentWord: {},
+    loading: false,
     error: null,
   },
   reducers: {

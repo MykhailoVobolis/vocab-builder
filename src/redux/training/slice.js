@@ -17,6 +17,8 @@ const trainingSlice = createSlice({
     tasks: [],
     response: [],
     resultsTraining: [],
+    loading: false,
+    error: null,
   },
   reducers: {
     addAnswer: (state, action) => {

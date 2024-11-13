@@ -18,8 +18,8 @@ export default function ResultsTrainingModal() {
     <div className={css.resultsWrapper}>
       <h2 className={css.title}>Well done</h2>
       <div className={css.resultsContainer}>
-        {corrects.length > 0 && <ResultsWordsList description="Сorrect answers:" words={corrects} />}
-        {mistakes.length > 0 && <ResultsWordsList description="Mistakes:" words={mistakes} />}
+        <ResultsWordsList description="Сorrect answers:" words={corrects} />
+        <ResultsWordsList description="Mistakes:" words={mistakes} />
       </div>
       <picture className={css.bookImage}>
         {isTablet ? (

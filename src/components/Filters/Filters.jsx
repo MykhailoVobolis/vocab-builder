@@ -21,14 +21,11 @@ import css from "./Filters.module.css";
 
 export default function Filters() {
   const dispatch = useDispatch();
-  const dictionaryParams = useSelector(selectFilterDictionary);
-  const recomendParams = useSelector(selectFilterRecomend);
+  const { pathname } = useLocation();
   const categories = useSelector(selectCategories);
 
-  const { pathname } = useLocation();
   const isDictionary = pathname.includes("dictionary");
-
-  const filterParams = isDictionary ? dictionaryParams : recomendParams;
+  const filterParams = useSelector(isDictionary ? selectFilterDictionary : selectFilterRecomend);
 
   const { keyword: keywordValue, category: categoryValue, isIrregular: isIrregularValue } = filterParams;
 
@@ -87,7 +84,7 @@ export default function Filters() {
       <form className={css.searchForm}>
         <SearchInputField name="keyword" label="Keyword" placeholder="Find the word" />
         <CustomSelect name="category" label="Category" options={categories} categoryValue={categoryValue} />
-        {category === "verb" && <RadioField name="isIrregular" label="IsIrregular" />}
+        {category === "verb" && <RadioField name="isIrregular" label="IsIrregular" isDictionary={isDictionary} />}
       </form>
     </FormProvider>
   );
