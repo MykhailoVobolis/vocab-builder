@@ -29,8 +29,9 @@ export default function WordsPagination() {
   const handlePageChange = (event, value) => {
     if (isDictionary) {
       dispatch(changeDictionaryPage(value));
+    } else {
+      dispatch(changeRecomendPage(value));
     }
-    dispatch(changeRecomendPage(value));
   };
 
   return (

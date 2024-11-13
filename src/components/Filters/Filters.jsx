@@ -9,7 +9,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllWords, getWordsOwn } from "../../redux/words/operations.js";
 import { useLocation } from "react-router-dom";
 import { selectFilterDictionary, selectFilterRecomend } from "../../redux/filters/selectors.js";
-import { changeFilterDictionary } from "../../redux/filters/slice.js";
+import {
+  changeDictionaryPage,
+  changeFilterDictionary,
+  changeFilterRecomend,
+  changeRecomendPage,
+} from "../../redux/filters/slice.js";
 
 import css from "./Filters.module.css";
 
@@ -50,13 +55,18 @@ export default function Filters() {
       category: data.category,
       ...(data.category === "verb" ? { isIrregular: data.isIrregular } : { isIrregular: null }),
     };
-    dispatch(changeFilterDictionary(filterData));
+
+    if (isDictionary) {
+      dispatch(changeFilterDictionary(filterData));
+      dispatch(changeDictionaryPage(1));
+    } else {
+      dispatch(changeFilterRecomend(filterData));
+      dispatch(changeRecomendPage(1));
+    }
   };
 
   useEffect(() => {
     pathname.includes("dictionary") ? dispatch(getWordsOwn(filterParams)) : dispatch(getAllWords(filterParams));
-
-    // dispatch(getWordsOwn(filterParams));
   }, [dispatch, filterParams]);
 
   // Создаем debounced версию onSubmit
