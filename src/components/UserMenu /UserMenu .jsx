@@ -1,7 +1,8 @@
-import UserAvatar from "../UserAvatar/UserAvatar.jsx";
-import { HiOutlineArrowRight } from "react-icons/hi";
 import { useDispatch } from "react-redux";
+import { HiOutlineArrowRight } from "react-icons/hi";
 import { logOut } from "../../redux/auth/operations.js";
+
+import UserAvatar from "../UserAvatar/UserAvatar.jsx";
 
 import css from "./UserMenu .module.css";
 

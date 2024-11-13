@@ -1,15 +1,16 @@
-import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
-import SvgIcon from "../SvgIcon.jsx";
-import { capitalizeFirstLetter } from "../../Helpers/capitalizeFirstLetter.js";
+import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
-import WordBarPopover from "../WordBarPopover/WordBarPopover.jsx";
-import ProgressBar from "../ProgressBar/ProgressBar.jsx";
-import { addCurrentWord } from "../../redux/words/slice.js";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { addWord, getStatistics } from "../../redux/words/operations.js";
-import toast from "react-hot-toast";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
+import { capitalizeFirstLetter } from "../../Helpers/capitalizeFirstLetter.js";
+import { addCurrentWord } from "../../redux/words/slice.js";
+import { addWord, getStatistics } from "../../redux/words/operations.js";
+
+import ProgressBar from "../ProgressBar/ProgressBar.jsx";
+import WordBarPopover from "../WordBarPopover/WordBarPopover.jsx";
+import SvgIcon from "../SvgIcon.jsx";
 
 import css from "./WordsTable.module.css";
 

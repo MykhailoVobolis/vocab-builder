@@ -1,8 +1,8 @@
 import { useMedia } from "react-use";
 import { useSelector } from "react-redux";
 import { selectSortedResult } from "../../redux/training/selectors.js";
-import ResultsWordsList from "../ResultsWordsList/ResultsWordsList.jsx";
 
+import ResultsWordsList from "../ResultsWordsList/ResultsWordsList.jsx";
 import bookFloating from "../../assets/images/book-floating.png";
 import bookFloating2x from "../../assets/images/book-floating@2x.png";
 import bookFloatingMob from "../../assets/images/book-floating-mob.png";

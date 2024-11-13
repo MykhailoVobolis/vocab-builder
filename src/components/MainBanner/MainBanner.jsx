@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import SignUpForm from "../AuthForm/AuthForm.jsx";
 import { capitalizeFirstLetter } from "../../Helpers/capitalizeFirstLetter.js";
+
+import SignUpForm from "../AuthForm/AuthForm.jsx";
 
 import css from "./MainBanner.module.css";
 

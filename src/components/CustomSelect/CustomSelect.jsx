@@ -1,9 +1,9 @@
 import { nanoid } from "nanoid";
 import { useFormContext } from "react-hook-form";
 import { useEffect, useRef, useState } from "react";
-import { capitalizeFirstLetter } from "../../Helpers/capitalizeFirstLetter.js";
 import { IoChevronDown } from "react-icons/io5";
 import { MdError } from "react-icons/md";
+import { capitalizeFirstLetter } from "../../Helpers/capitalizeFirstLetter.js";
 
 import css from "./CustomSelect.module.css";
 

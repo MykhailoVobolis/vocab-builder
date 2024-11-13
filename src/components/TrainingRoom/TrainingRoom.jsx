@@ -1,8 +1,9 @@
-import ResponseForm from "../ResponseForm/ResponseForm.jsx";
-import TaskWordBlock from "../TaskWordBlock/TaskWordBlock.jsx";
 import { useDispatch } from "react-redux";
 import { clearResponse } from "../../redux/training/slice.js";
 import { useNavigate } from "react-router-dom";
+
+import ResponseForm from "../ResponseForm/ResponseForm.jsx";
+import TaskWordBlock from "../TaskWordBlock/TaskWordBlock.jsx";
 
 import css from "./TrainingRoom.module.css";
 

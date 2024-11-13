@@ -1,13 +1,10 @@
+import debounce from "lodash.debounce";
 import { FormProvider, useForm } from "react-hook-form";
 import { useEffect } from "react";
-import debounce from "lodash.debounce";
-import SearchInputField from "../SearchInputField/SearchInputField.jsx";
-import RadioField from "../RadioField/RadioField.jsx";
-import CustomSelect from "../CustomSelect/CustomSelect.jsx";
-import { selectCategories } from "../../redux/words/selectors.js";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllWords, getWordsOwn } from "../../redux/words/operations.js";
 import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCategories } from "../../redux/words/selectors.js";
+import { getAllWords, getWordsOwn } from "../../redux/words/operations.js";
 import { selectFilterDictionary, selectFilterRecomend } from "../../redux/filters/selectors.js";
 import {
   changeDictionaryPage,
@@ -15,6 +12,10 @@ import {
   changeFilterRecomend,
   changeRecomendPage,
 } from "../../redux/filters/slice.js";
+
+import SearchInputField from "../SearchInputField/SearchInputField.jsx";
+import CustomSelect from "../CustomSelect/CustomSelect.jsx";
+import RadioField from "../RadioField/RadioField.jsx";
 
 import css from "./Filters.module.css";
 
@@ -69,16 +70,16 @@ export default function Filters() {
     pathname.includes("dictionary") ? dispatch(getWordsOwn(filterParams)) : dispatch(getAllWords(filterParams));
   }, [dispatch, filterParams]);
 
-  // Создаем debounced версию onSubmit
+  // Створюємо debounced версію onSubmit
   const debouncedSubmit = debounce(handleSubmit(onSubmit), 300);
 
-  // Слушаем изменения в полях формы и вызываем debouncedSubmit
+  // Слухаємо зміни в полях форми і викликаємо debouncedSubmit
   useEffect(() => {
     const subscription = watch(() => {
-      debouncedSubmit(); // Вызываем сабмит при изменениях с дебаунсом
+      debouncedSubmit(); // Викликаємо сабміт при змінах з дебаунсом
     });
 
-    return () => subscription.unsubscribe(); // Отписываемся при размонтировании
+    return () => subscription.unsubscribe(); // Відписуємося при розмонтуванні
   }, [watch, debouncedSubmit]);
 
   return (

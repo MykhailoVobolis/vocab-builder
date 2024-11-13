@@ -1,12 +1,13 @@
-import { useDispatch } from "react-redux";
-import FormButton from "../FormButton/FormButton.jsx";
-import CancelButton from "../CancelButton/CancelButton.jsx";
-import InputWordField from "../InputWordField/InputWordField.jsx";
-import { FormProvider, useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { editWordSchema } from "../../utils/validationSchemas.js";
 import toast from "react-hot-toast";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { FormProvider, useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { editWordSchema } from "../../utils/validationSchemas.js";
 import { editWord, getWordsOwn } from "../../redux/words/operations.js";
+
+import InputWordField from "../InputWordField/InputWordField.jsx";
+import CancelButton from "../CancelButton/CancelButton.jsx";
+import FormButton from "../FormButton/FormButton.jsx";
 
 import css from "./EditWordForm.module.css";
 

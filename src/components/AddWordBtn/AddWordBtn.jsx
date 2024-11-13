@@ -1,6 +1,6 @@
-import { FiPlus } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { openModal } from "../../redux/modal/slice.js";
+import { FiPlus } from "react-icons/fi";
 
 import css from "./AddWordBtn.module.css";
 

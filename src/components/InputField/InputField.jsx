@@ -1,7 +1,8 @@
 import { useFormContext } from "react-hook-form";
 import { useState } from "react";
-import PasswordVisibilityButton from "../PasswordVisibilityButton/PasswordVisibilityButton.jsx";
 import { MdError } from "react-icons/md";
+
+import PasswordVisibilityButton from "../PasswordVisibilityButton/PasswordVisibilityButton.jsx";
 
 import css from "./InputField.module.css";
 

@@ -1,16 +1,16 @@
 import Modal from "react-modal";
 import { IoClose } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { closeModal } from "../../redux/modal/slice.js";
 import { selectStateModal, selectTypeModal } from "../../redux/modal/selectors.js";
+import { clearResponse, clearResultsTraining } from "../../redux/training/slice.js";
 
 import AddWordModal from "../AddWordModal/AddWordModal.jsx";
 import EditWordModal from "../EditWordModal/EditWordModal.jsx";
 import ResultsTrainingModal from "../ResultsTrainingModal/ResultsTrainingModal.jsx";
-import { clearResponse, clearResultsTraining } from "../../redux/training/slice.js";
 
 import css from "./ModalWindow.module.css";
-import { useNavigate } from "react-router-dom";
 
 Modal.setAppElement("#root");
 

@@ -1,10 +1,11 @@
 import { Toaster } from "react-hot-toast";
 import { lazy, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import Layout from "../Layout/Layout.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsRefreshing } from "../../redux/auth/selectors.js";
 import { refreshUser } from "../../redux/auth/operations.js";
+
+import Layout from "../Layout/Layout.jsx";
 import PrivateRoute from "../PrivateRoute.jsx";
 import RestrictedRoute from "../RestrictedRoute.jsx";
 

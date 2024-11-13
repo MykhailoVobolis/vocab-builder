@@ -1,16 +1,17 @@
+import toast from "react-hot-toast";
+import { useEffect } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCategories } from "../../redux/words/selectors.js";
+import { addWord, getStatistics, getWordsOwn } from "../../redux/words/operations.js";
+import { wordsSchema } from "../../utils/validationSchemas.js";
+
 import CustomSelect from "../CustomSelect/CustomSelect.jsx";
 import FormButton from "../FormButton/FormButton.jsx";
 import CancelButton from "../CancelButton/CancelButton.jsx";
 import InputWordField from "../InputWordField/InputWordField.jsx";
-import { wordsSchema } from "../../utils/validationSchemas.js";
 import RadioWordField from "../RadioWordField/RadioWordField.jsx";
-import { useEffect } from "react";
-import { addWord, getStatistics, getWordsOwn } from "../../redux/words/operations.js";
-import toast from "react-hot-toast";
 
 import css from "./AddWordForm.module.css";
 

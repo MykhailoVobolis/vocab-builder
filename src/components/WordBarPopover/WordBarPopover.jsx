@@ -1,8 +1,9 @@
+import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import SvgIcon from "../SvgIcon.jsx";
 import { deleteWord, getStatistics, getWordsOwn } from "../../redux/words/operations.js";
 import { openModal } from "../../redux/modal/slice.js";
-import toast from "react-hot-toast";
+
+import SvgIcon from "../SvgIcon.jsx";
 
 import css from "./WordBarPopover.module.css";
 

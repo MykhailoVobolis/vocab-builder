@@ -1,4 +1,5 @@
 import SvgIcon from "../SvgIcon.jsx";
+
 import css from "./LanguageFlagWithName.module.css";
 
 export default function LanguageFlagWithName({ iconName, language }) {

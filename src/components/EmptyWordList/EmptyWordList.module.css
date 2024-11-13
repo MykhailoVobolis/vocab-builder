@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  max-width: 902px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 131px;
+}
+
+.aboutContainer {
+  width: 606px;
+  padding: 18px 0 18px 25px;
+}
+
+.mainMessage {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+
+.text {
+  margin-bottom: 64px;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 416px;
+}

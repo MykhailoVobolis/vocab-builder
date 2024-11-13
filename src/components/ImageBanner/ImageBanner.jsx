@@ -1,4 +1,5 @@
 import MainPicture from "../MainPicture/MainPicture.jsx";
+
 import css from "./ImageBanner.module.css";
 
 export default function ImageBanner() {

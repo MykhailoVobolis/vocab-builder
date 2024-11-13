@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+
 import AddWordBtn from "../AddWordBtn/AddWordBtn.jsx";
 import TrainLink from "../TrainLink/TrainLink.jsx";
 

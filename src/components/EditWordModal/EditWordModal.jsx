@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectCurrentWord } from "../../redux/words/selectors.js";
+
 import EditWordForm from "../EditWordForm/EditWordForm.jsx";
 
 import css from "./EditWordModal.module.css";

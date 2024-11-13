@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import ImageBanner from "../../components/ImageBanner/ImageBanner.jsx";
 
 import css from "./HomePage.module.css";

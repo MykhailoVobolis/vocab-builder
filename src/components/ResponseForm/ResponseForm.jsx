@@ -1,17 +1,18 @@
+import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch, useSelector } from "react-redux";
 import { addAnswer, clearResponse } from "../../redux/training/slice.js";
-import LanguageFlagWithName from "../LanguageFlagWithName/LanguageFlagWithName.jsx";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import { MdError } from "react-icons/md";
 import { selectResponse, selectTotalResponse, selectTotalTasks } from "../../redux/training/selectors.js";
 import { sendRespons } from "../../redux/training/operations.js";
-import toast from "react-hot-toast";
-import FormButton from "../FormButton/FormButton.jsx";
-import CancelButton from "../CancelButton/CancelButton.jsx";
 import { openModal } from "../../redux/modal/slice.js";
 import { englishWordSchema, ukrainianWordSchema } from "../../utils/validationSchemas.js";
-import { MdError } from "react-icons/md";
+
+import CancelButton from "../CancelButton/CancelButton.jsx";
+import LanguageFlagWithName from "../LanguageFlagWithName/LanguageFlagWithName.jsx";
+import FormButton from "../FormButton/FormButton.jsx";
 
 import css from "./ResponseForm.module.css";
 

@@ -1,6 +1,7 @@
-import css from "./SearchInputField.module.css";
 import { useFormContext } from "react-hook-form";
 import { LuSearch } from "react-icons/lu";
+
+import css from "./SearchInputField.module.css";
 
 export default function SearchInputField({ name, label, placeholder }) {
   const { register } = useFormContext();

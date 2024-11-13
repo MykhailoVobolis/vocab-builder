@@ -1,4 +1,3 @@
-import Pagination from "@mui/material/Pagination";
 import { PaginationItem } from "@mui/material";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
@@ -9,6 +8,8 @@ import { selectDictionary, selectRecomendWords } from "../../redux/words/selecto
 import { selectFilterDictionary, selectFilterRecomend } from "../../redux/filters/selectors.js";
 import { changeDictionaryPage, changeRecomendPage } from "../../redux/filters/slice.js";
 import { useLocation } from "react-router-dom";
+
+import Pagination from "@mui/material/Pagination";
 
 import css from "./WordsPagination.module.css";
 

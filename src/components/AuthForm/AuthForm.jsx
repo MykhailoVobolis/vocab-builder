@@ -1,14 +1,12 @@
+import toast from "react-hot-toast";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signUpSchema, singInSchema } from "../../utils/validationSchemas.js";
-import { toast } from "react-hot-toast";
-
 import { useDispatch } from "react-redux";
+import { logIn, register } from "../../redux/auth/operations.js";
 
 import InputField from "../InputField/InputField.jsx";
 import FormButton from "../FormButton/FormButton.jsx";
-
-import { logIn, register } from "../../redux/auth/operations.js";
 
 import css from "./AuthForm.module.css";
 
