@@ -49,7 +49,7 @@ export default function EditWordForm({ onClose, currentWord }) {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className={css.form}>
+      <form className={css.formContainer} onSubmit={methods.handleSubmit(onSubmit)}>
         <div className={css.imputContainer}>
           <InputWordField name="ua" label="Ukrainian" placeholder="Працювати" iconName="icon-ukraine" />
           <InputWordField name="en" label="English" placeholder="Work" iconName="icon-unitedKingdom" />

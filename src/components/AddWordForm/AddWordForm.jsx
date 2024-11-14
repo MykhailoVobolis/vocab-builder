@@ -57,7 +57,7 @@ export default function AddWordForm({ onClose }) {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className={css.form}>
+      <form className={css.formContainer} onSubmit={methods.handleSubmit(onSubmit)}>
         <div className={css.selectContainer}>
           <CustomSelect name="category" label="Category" options={categories} formType={"words"} />
           {category === "verb" && <RadioWordField name="modalIsIrregular" label="ModalIsIrregular" />}

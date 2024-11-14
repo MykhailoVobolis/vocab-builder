@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { closeModal } from "../../redux/modal/slice.js";
 import { selectStateModal, selectTypeModal } from "../../redux/modal/selectors.js";
 import { clearResponse, clearResultsTraining } from "../../redux/training/slice.js";
+import { useMedia } from "react-use";
 
 import AddWordModal from "../AddWordModal/AddWordModal.jsx";
 import EditWordModal from "../EditWordModal/EditWordModal.jsx";
@@ -54,6 +55,7 @@ export default function ModalWindow() {
   const navigate = useNavigate();
   const isOpen = useSelector(selectStateModal);
   const modalType = useSelector(selectTypeModal);
+  const isTablet = useMedia("(min-width: 768px)");
 
   const onClose = () => {
     dispatch(closeModal());
@@ -76,7 +78,7 @@ export default function ModalWindow() {
       closeTimeoutMS={500}
       onRequestClose={onClose}>
       <button className={css.closeBtn} onClick={onClose}>
-        <IoClose className={css.closeIcon} size={32} />
+        <IoClose className={css.closeIcon} size={isTablet ? 32 : 24} />
       </button>
       {addContentModal(modalType, onClose)}
     </Modal>
