@@ -37,6 +37,7 @@
   margin-bottom: 0px;
 }
 
-button:disabled:hover {
-  background-color: var(--text-semitransparent);
+.submitAuthFormMobile {
+  font-size: 16px;
+  height: 56px;
 }

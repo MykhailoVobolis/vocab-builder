@@ -1,0 +1,8 @@
+.burgerBtn {
+  stroke: var(--black);
+  padding: 0;
+  line-height: 0;
+  background-color: transparent;
+  border: none;
+  margin-left: 8px;
+}

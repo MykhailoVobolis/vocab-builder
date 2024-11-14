@@ -1,24 +1,61 @@
 .userAvatarContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .userName {
   font-weight: 500;
-  font-size: 20px;
 }
 
 .userAvatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   border-radius: 100px;
   background-color: var(--green);
   color: var(--white);
   font-size: 22px;
   font-weight: 500;
+}
+
+.userNameMobile {
+  color: var(--white);
+}
+
+.userAvatarMobile {
+  background: var(--white);
+  color: var(--green);
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+  .userAvatarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .userName {
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .userAvatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    background-color: var(--green);
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 500;
+  }
 }

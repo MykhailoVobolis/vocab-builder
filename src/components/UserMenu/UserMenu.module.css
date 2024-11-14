@@ -1,0 +1,7 @@
+.userMenuContainer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 16px;
+  width: 600px;
+}

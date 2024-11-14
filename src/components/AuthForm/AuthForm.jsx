@@ -38,7 +38,7 @@ export default function AuthForm({ type, title }) {
           <InputField name="email" label="Email" type="email" placeholder="Email" />
           <InputField name="password" label="Password" type="password" placeholder="Password" />
         </div>
-        <FormButton>{title}</FormButton>
+        <FormButton variant="submitAuthFormMobile">{title}</FormButton>
       </form>
     </FormProvider>
   );

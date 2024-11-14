@@ -5,6 +5,7 @@ const modalSlice = createSlice({
   initialState: {
     isOpen: false,
     modalType: null,
+    mobileMenuIsOpen: false,
   },
   reducers: {
     openModal: (state, action) => {
@@ -15,8 +16,14 @@ const modalSlice = createSlice({
       state.isOpen = false;
       state.modalType = null;
     },
+    openModalMobile: (state) => {
+      state.mobileMenuIsOpen = true;
+    },
+    closeModalMobile: (state) => {
+      state.mobileMenuIsOpen = false;
+    },
   },
 });
 
-export const { openModal, closeModal } = modalSlice.actions;
+export const { openModal, closeModal, openModalMobile, closeModalMobile } = modalSlice.actions;
 export const modalReducer = modalSlice.reducer;

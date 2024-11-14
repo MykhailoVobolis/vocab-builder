@@ -1,6 +1,5 @@
 .container {
-  height: 100%;
-  padding-top: 35px;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,21 +9,76 @@
 
 .descList {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   color: var(--text-form);
 }
 
 .afterElement {
+  font-size: 14px;
   position: relative;
 }
 
 .afterElement::after {
   content: "";
   position: absolute;
-  right: -10px;
-  bottom: 10px;
+  right: -8px;
+  bottom: 11px;
   width: 2px;
   height: 2px;
   border-radius: 100px;
   background-color: var(--text-form);
+}
+
+@media screen and (min-width: 768px) {
+  .afterElement {
+    font-size: 16px;
+  }
+
+  .descList {
+    gap: 20px;
+  }
+
+  .afterElement::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    bottom: 10px;
+    width: 2px;
+    height: 2px;
+    border-radius: 100px;
+    background-color: var(--text-form);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    height: 100%;
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .descList {
+    display: flex;
+    gap: 20px;
+    color: var(--text-form);
+  }
+
+  .afterElement {
+    position: relative;
+  }
+
+  .afterElement::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    bottom: 10px;
+    width: 2px;
+    height: 2px;
+    border-radius: 100px;
+    background-color: var(--text-form);
+  }
 }
