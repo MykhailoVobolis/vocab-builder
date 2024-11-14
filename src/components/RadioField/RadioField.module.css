@@ -1,3 +1,9 @@
+.radioGroup {
+  position: absolute;
+  top: 112px;
+  left: 0;
+}
+
 .label {
   position: absolute;
   width: 1px;
@@ -64,4 +70,81 @@
 
 .hiddenRadioButton:checked + .customRadio::after {
   opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+  .radioGroup {
+    position: static;
+  }
+
+  .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .labelText {
+    font-size: 14px;
+  }
+
+  .labelContainer {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .radioItem {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .hiddenRadioButton {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .customRadio {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 100px;
+    border: 2px solid var(--border);
+    position: relative;
+    cursor: pointer;
+    transition: border-color var(--animation);
+  }
+
+  .hiddenRadioButton:checked + .customRadio {
+    border-color: var(--green);
+  }
+
+  .customRadio::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    background-color: var(--green);
+    opacity: 0;
+    transition: opacity var(--animation);
+  }
+
+  .hiddenRadioButton:checked + .customRadio::after {
+    opacity: 1;
+  }
 }

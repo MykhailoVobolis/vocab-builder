@@ -10,7 +10,7 @@ export default function RadioField({ name, label, isDictionary }) {
   const { isIrregular } = useSelector(isDictionary ? selectFilterDictionary : selectFilterRecomend);
 
   return (
-    <div>
+    <div className={css.radioGroup}>
       <label className={css.label}>{label}</label>
       <div className={css.labelContainer}>
         <label className={css.radioItem} htmlFor="regular">

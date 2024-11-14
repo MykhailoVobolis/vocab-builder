@@ -20,11 +20,29 @@
 
 .answerCancelButton {
   background-color: transparent;
-  color: var(--green);
-  border: 1px solid var(--green);
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-semitransparent);
+  height: 100%;
+  width: 65px;
 }
 
-.answerCancelButton:hover {
-  color: var(--white);
-  background-color: var(--green);
+.answerCancelButton :hover {
+  background-color: transparent;
+}
+
+@media screen and (min-width: 1440px) {
+  .answerCancelButton {
+    background-color: transparent;
+    color: var(--green);
+    border: 1px solid var(--green);
+    width: 100%;
+    height: 56px;
+  }
+
+  .answerCancelButton:hover {
+    color: var(--white);
+    background-color: var(--green);
+  }
 }

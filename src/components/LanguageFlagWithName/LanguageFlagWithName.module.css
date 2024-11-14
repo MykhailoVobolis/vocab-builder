@@ -2,8 +2,25 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-top: 123px;
 }
 
 .language {
   font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+  .languageFlagContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .language {
+    font-weight: 500;
+  }
 }

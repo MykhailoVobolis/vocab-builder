@@ -4,6 +4,7 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
+import { useMedia } from "react-use";
 import { selectDictionary, selectRecomendWords } from "../../redux/words/selectors.js";
 import { selectFilterDictionary, selectFilterRecomend } from "../../redux/filters/selectors.js";
 import { changeDictionaryPage, changeRecomendPage } from "../../redux/filters/slice.js";
@@ -19,6 +20,8 @@ export default function WordsPagination() {
   const isDictionary = pathname.includes("dictionary");
   const { totalPages } = useSelector(isDictionary ? selectDictionary : selectRecomendWords);
   const { page } = useSelector(isDictionary ? selectFilterDictionary : selectFilterRecomend);
+
+  const isMobile = useMedia("(max-width: 767px)");
 
   // Функція обробки зміни сторінки
   const handlePageChange = (event, value) => {
@@ -50,7 +53,7 @@ export default function WordsPagination() {
         shape="rounded"
         showFirstButton
         showLastButton
-        siblingCount={0}
+        siblingCount={isMobile ? -1 : 0}
         sx={{
           // Стилізація всіх єлементів
           "& .MuiPaginationItem-root": {

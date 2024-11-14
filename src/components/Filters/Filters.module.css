@@ -1,5 +1,19 @@
 .searchForm {
-  display: flex;
-  gap: 8px;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+  .searchForm {
+    width: 635px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 0;
+  }
 }

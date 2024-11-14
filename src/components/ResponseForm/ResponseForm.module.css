@@ -1,31 +1,32 @@
 .responseWrapper {
   display: flex;
   justify-content: space-between;
-  align-items: start;
-  width: 50%;
+  align-items: end;
+  width: 100%;
   padding: 22px;
+  height: 50%;
   background-color: var(--white);
-  border-radius: 8px 0 0 0;
+  border-radius: 8px 8px 0 0;
   position: relative;
+  border-bottom: 1px solid var(--border-table);
 }
 
 .formWrapper {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 100%;
 }
 
 .inputAnswer {
   position: relative;
   font-weight: 500;
-  font-size: 20px;
   line-height: 1.5;
   color: var(--black);
   background-color: var(--white);
   outline: transparent;
   outline-offset: 4px;
   border: none;
-  margin-bottom: 204px;
+  margin-bottom: 106px;
 }
 
 .inputAnswer::placeholder {
@@ -57,12 +58,13 @@
 
 .buttonGroup {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 416px;
+  width: 100%;
   position: absolute;
-  left: -18px;
-  top: 400px;
+  left: 0;
+  top: 506px;
 }
 
 .errorMessage {
@@ -71,6 +73,91 @@
   gap: 5px;
   font-size: 12px;
   position: absolute;
-  top: 56px;
+  top: 46px;
   color: var(--error);
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+  .responseWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 50%;
+    height: 302px;
+    padding: 22px;
+    background-color: var(--white);
+    border-radius: 8px 0 0 0;
+    position: relative;
+    border-bottom: none;
+  }
+
+  .formWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .inputAnswer {
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--black);
+    background-color: var(--white);
+    outline: transparent;
+    outline-offset: 4px;
+    border: none;
+    margin-bottom: 204px;
+  }
+
+  .inputAnswer::placeholder {
+    color: var(--black);
+  }
+
+  .nextBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text-semitransparent);
+    background-color: transparent;
+    padding: 0;
+    width: 70px;
+    border: none;
+    transition: color var(--animation);
+  }
+
+  .nextBtn:hover {
+    color: var(--green);
+  }
+
+  .nextBtnIcon {
+    stroke: var(--green);
+  }
+
+  .buttonGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 416px;
+    position: absolute;
+    left: -18px;
+    top: 400px;
+  }
+
+  .errorMessage {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    position: absolute;
+    top: 56px;
+    color: var(--error);
+  }
 }

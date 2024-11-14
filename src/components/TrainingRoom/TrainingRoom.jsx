@@ -17,11 +17,9 @@ export default function TrainingRoom({ currentTask, switchTask, progress }) {
   };
 
   return (
-    <div className={css.trainingRoomContainer}>
-      <div className={css.tasksContainer}>
-        <ResponseForm currentTask={currentTask} switchTask={switchTask} handleClose={handleClose} progress={progress} />
-        <TaskWordBlock currentTask={currentTask} />
-      </div>
+    <div className={css.tasksContainer}>
+      <ResponseForm currentTask={currentTask} switchTask={switchTask} handleClose={handleClose} progress={progress} />
+      <TaskWordBlock currentTask={currentTask} />
     </div>
   );
 }

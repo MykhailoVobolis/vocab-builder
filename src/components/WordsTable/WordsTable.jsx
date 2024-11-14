@@ -1,4 +1,5 @@
 import toast from "react-hot-toast";
+import { useMedia } from "react-use";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
@@ -21,6 +22,7 @@ export default function WordsTable({ words }) {
   const [activeWordId, setActiveWordId] = useState(null); // Зберігаємо ID активного рядка
   const { pathname } = useLocation();
   const isDictionary = pathname.includes("dictionary");
+  const isTablet = useMedia("(min-width: 768px)");
 
   function toggleMenu(rowData) {
     dispatch(addCurrentWord(rowData));
@@ -65,7 +67,7 @@ export default function WordsTable({ words }) {
       header: () => (
         <div className={css.headerTabContainer}>
           <span>Word</span>
-          <SvgIcon name="icon-unitedKingdom" width={32} height={32} className={css.icon} />
+          {isTablet && <SvgIcon name="icon-unitedKingdom" width={32} height={32} className={css.icon} />}
         </div>
       ),
       cell: (info) => info.getValue(), // Значення комірки (отримується за допомогою info.getValue())
@@ -74,15 +76,21 @@ export default function WordsTable({ words }) {
       header: () => (
         <div className={css.headerTabContainer}>
           <span>Translation</span>
-          <SvgIcon name="icon-ukraine" width={32} height={32} className={css.icon} />
+          {isTablet && <SvgIcon name="icon-ukraine" width={32} height={32} className={css.icon} />}
         </div>
       ),
       cell: (info) => info.getValue(),
     }),
-    columnHelper.accessor("category", {
-      header: () => "Category",
-      cell: (info) => capitalizeFirstLetter(info.getValue()),
-    }),
+
+    // Умовне додавання колонки "Category"
+    ...(isTablet || (!isTablet && !isDictionary)
+      ? [
+          columnHelper.accessor("category", {
+            header: () => "Category",
+            cell: (info) => capitalizeFirstLetter(info.getValue()),
+          }),
+        ]
+      : []),
 
     // Умовне додавання колонки "Progress"
     ...(isDictionary
@@ -91,7 +99,7 @@ export default function WordsTable({ words }) {
             header: () => "Progress",
             cell: (info) => (
               <div className={css.progressWrapper}>
-                <p>{`${info.getValue()}%`}</p>
+                {isTablet && <p>{`${info.getValue()}%`}</p>}
                 <ProgressBar
                   progress={info.getValue()}
                   size={26}
@@ -117,7 +125,7 @@ export default function WordsTable({ words }) {
             </button>
           ) : (
             <button className={css.addWordBtn} onClick={() => addToDictionary(info.row.original)}>
-              Add to dictionary
+              {isTablet && <span>Add to dictionary</span>}
               <HiOutlineArrowNarrowRight className={css.addWordBtnIcon} size={20} />
             </button>
           )}

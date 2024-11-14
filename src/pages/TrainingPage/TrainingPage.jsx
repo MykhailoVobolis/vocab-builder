@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTasks } from "../../redux/training/operations.js";
 import { selectLoading, selectTasks } from "../../redux/training/selectors.js";
 import { clearResponse } from "../../redux/training/slice.js";
+import { useMedia } from "react-use";
 
 import TrainingRoom from "../../components/TrainingRoom/TrainingRoom.jsx";
 import ProgressBar from "../../components/ProgressBar/ProgressBar.jsx";
@@ -17,6 +18,7 @@ export default function TrainingPage() {
   const dispatch = useDispatch();
   const tasks = useSelector(selectTasks);
   const isLoading = useSelector(selectLoading);
+  const isTablet = useMedia("(min-width: 768px)");
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -49,7 +51,7 @@ export default function TrainingPage() {
           <div className={css.progressBarWrapper}>
             <ProgressBar
               progress={progressPercentage}
-              size={58}
+              size={isTablet ? 58 : 44}
               dark="var(--green)"
               light="var(--main-white)"
               thicknessDark={3}

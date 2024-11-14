@@ -1,5 +1,8 @@
 .pageContainer {
-  padding: 62px 0 48px 0;
+  padding: 24px 16px 78px 16px;
+  max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container {
@@ -21,10 +24,47 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 58px;
+  width: 44px;
+  height: 44px;
   font-weight: 500;
   position: absolute;
   top: 0px;
   left: 0px;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+  .pageContainer {
+    padding: 62px 0 48px 0;
+    max-width: 1440px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .progressBarWrapper {
+    position: relative;
+    margin-left: auto;
+  }
+
+  .progressValue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    font-weight: 500;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
 }
