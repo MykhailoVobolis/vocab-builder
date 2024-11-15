@@ -22,6 +22,12 @@
   transition: background-color var(--animation);
 }
 
+@media screen and (min-width: 768px) {
+  .navMenu {
+    margin-top: 170px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .navMenu {
     display: flex;

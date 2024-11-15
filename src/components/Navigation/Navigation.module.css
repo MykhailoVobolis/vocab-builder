@@ -8,7 +8,7 @@
 .navigation {
   display: flex;
   width: 100%;
-  max-width: 778px;
+  max-width: 190px;
   align-items: center;
   justify-content: space-between;
 }
@@ -28,6 +28,15 @@
   .mainLogo {
     font-size: 22px;
     line-height: 1.45;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navigation {
+    max-width: 478px;
   }
 }
 

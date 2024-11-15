@@ -1,6 +1,5 @@
 /* Базовий стиль для контейнера таблиці */
 .tableWrapper {
-  /* padding: 18px; */
   border-radius: 15px;
   background-color: var(--main-white);
   overflow-x: auto;
@@ -150,6 +149,61 @@ td:nth-child(5) {
 }
 
 @media screen and (min-width: 768px) {
+  .tableWrapper {
+    padding: 18px;
+    border-radius: 15px;
+    background-color: var(--main-white);
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  /* Стиль для заголовка таблиці */
+  thead th {
+    background-color: var(--background-form);
+    padding: 20px 12px 20px 22px;
+    font-weight: bold;
+    text-align: left;
+    font-weight: 500;
+    font-size: 18px;
+    border-right: 1px solid var(--border-table);
+  }
+
+  /* Стиль для комірок таблиці */
+  td {
+    padding: 22px;
+    border-right: 1px solid var(--border-table);
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  /* Задати фіксовану ширину для окремих колонок DictionaryTab*/
+  .columnDictionary-1 {
+    width: 160px;
+  }
+
+  .columnDictionary-2 {
+    width: 169px;
+  }
+
+  .columnDictionary-3 {
+    width: 151px;
+  }
+
+  .columnDictionary-4 {
+    width: 122px;
+  }
+
+  td:nth-child(5) {
+    display: flex;
+    justify-content: center;
+  }
+
+  .progressWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+  }
 }
 
 @media screen and (min-width: 1440px) {

@@ -70,6 +70,7 @@
   }
 
   .inputField {
+    min-width: 354px;
     width: 354px;
     padding: 15px 18px;
     border: 1px solid var(--border-white);
