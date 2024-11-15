@@ -8,8 +8,7 @@ import UserAvatar from "../UserAvatar/UserAvatar.jsx";
 import css from "./Navigation.module.css";
 
 export default function Navigation({ isLoggedIn }) {
-  const isMobile = useMedia("(max-width: 767px)");
-  const isDesktop = useMedia("(min-width: 1024px)");
+  const isDesktop = useMedia("(min-width: 1440px)");
 
   return (
     <div className={css.barContainer}>
@@ -20,8 +19,8 @@ export default function Navigation({ isLoggedIn }) {
         </Link>
         {isDesktop && isLoggedIn && <NavigationList />}
       </nav>
-      {isMobile && isLoggedIn && <UserAvatar />}
-      {isMobile && isLoggedIn && <BurgerButton />}
+      {!isDesktop && isLoggedIn && <UserAvatar />}
+      {!isDesktop && isLoggedIn && <BurgerButton />}
     </div>
   );
 }

@@ -31,9 +31,24 @@
 }
 
 @media screen and (min-width: 768px) {
+  .userAvatarContainer {
+    gap: 10px;
+  }
+
+  .userName {
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .userAvatar {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+    font-weight: 500;
+  }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   .userAvatarContainer {
     display: flex;
     align-items: center;

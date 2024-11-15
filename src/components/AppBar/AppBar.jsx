@@ -10,7 +10,7 @@ import css from "./AppBar.module.css";
 export default function AppBar() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  const isDesktop = useMedia("(min-width: 1024px)");
+  const isDesktop = useMedia("(min-width: 1440px)");
 
   return (
     <header className={isLoggedIn ? css.isLoggedInHeader : css.header}>

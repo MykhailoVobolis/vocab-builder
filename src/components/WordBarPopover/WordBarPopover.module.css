@@ -34,17 +34,14 @@
 }
 
 @media screen and (min-width: 768px) {
-}
-
-@media screen and (min-width: 1440px) {
   .popoverContainer {
     border-radius: 15px;
     padding: 12px 24px;
     box-shadow: 0 4px 47px 0 var(--shadow);
     background: var(--main-white);
     position: absolute;
-    top: -55px;
-    left: -20px;
+    top: -25px;
+    left: -54px;
     z-index: 9999;
     display: flex;
     flex-direction: column;
@@ -71,5 +68,12 @@
     color: var(--black);
     border: none;
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .popoverContainer {
+    top: -55px;
+    left: -20px;
   }
 }

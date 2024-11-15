@@ -78,6 +78,47 @@
 }
 
 @media screen and (min-width: 768px) {
+  .responseWrapper {
+    align-items: start;
+  }
+
+  .formWrapper {
+    width: 70%;
+  }
+
+  .inputAnswer {
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--black);
+    background-color: var(--white);
+    outline: transparent;
+    outline-offset: 4px;
+    border: none;
+    margin-bottom: 184px;
+  }
+
+  .buttonGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 416px;
+    position: absolute;
+    left: -18px;
+    top: 622px;
+  }
+
+  .errorMessage {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    position: absolute;
+    top: 56px;
+    color: var(--error);
+  }
 }
 
 @media screen and (min-width: 1440px) {

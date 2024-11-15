@@ -44,6 +44,22 @@
 }
 
 @media screen and (min-width: 768px) {
+  .inputContainer {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  .searchInputField {
+    width: 274px;
+    padding: 11px 24px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    outline: transparent;
+    outline-offset: 4px;
+    line-height: 1.5;
+    background-color: transparent;
+    transition: border-color var(--animation);
+  }
 }
 
 @media screen and (min-width: 1440px) {

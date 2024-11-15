@@ -8,16 +8,17 @@
 
 .contentContainer {
   display: flex;
-  /* align-items: center; */
   justify-content: space-between;
 }
 
 .wordTask {
   font-weight: 500;
-  font-size: 20px;
 }
 
 @media screen and (min-width: 768px) {
+  .wordTask {
+    font-size: 20px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -34,10 +35,5 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  .wordTask {
-    font-weight: 500;
-    font-size: 20px;
   }
 }

@@ -5,7 +5,7 @@ import SvgIcon from "../SvgIcon.jsx";
 import css from "./LanguageFlagWithName.module.css";
 
 export default function LanguageFlagWithName({ iconName, language }) {
-  const isDesktop = useMedia("(min-width: 1024px)");
+  const isDesktop = useMedia("(min-width: 1440px)");
 
   return (
     <div className={css.languageFlagContainer}>
