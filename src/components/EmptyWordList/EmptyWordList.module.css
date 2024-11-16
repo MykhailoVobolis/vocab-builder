@@ -4,11 +4,12 @@
   gap: 32px;
   align-items: center;
   justify-content: center;
+  padding-top: 51px;
   height: 100%;
-  max-width: 902px;
+  padding: 0 16px;
+  max-width: 375px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 51px;
 }
 
 .aboutContainer {
@@ -38,16 +39,8 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
     max-width: 581px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 78px;
+    padding: 78px 0 0 0;
   }
 
   .mainMessage {
@@ -60,26 +53,16 @@
   }
 
   .buttonGroup {
-    display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    width: 416px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
-    display: flex;
     flex-direction: row;
-    gap: 32px;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
     max-width: 902px;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 131px;
+    padding: 0;
   }
 
   .aboutContainer {
@@ -90,21 +73,6 @@
   }
 
   .mainMessage {
-    font-weight: 500;
-    font-size: 20px;
     margin-bottom: 32px;
-  }
-
-  .text {
-    font-size: 16px;
-    margin-bottom: 64px;
-  }
-
-  .buttonGroup {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    width: 416px;
   }
 }

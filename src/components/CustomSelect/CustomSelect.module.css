@@ -66,7 +66,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 12px;
+  font-size: 10px;
   position: absolute;
   top: 46px;
   left: 0px;
@@ -77,14 +77,13 @@
 
 .modalCustomSelect {
   position: relative;
-  width: 204px;
   padding: 11px 24px;
   border-radius: 15px;
   border: 1px solid var(--border-white);
   background-color: var(--green);
   cursor: pointer;
   transition: border-color var(--animation);
-  margin-bottom: 70px;
+  margin-bottom: 58px;
   color: var(--white);
   width: 100%;
 }
@@ -122,125 +121,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  .customSelect {
-    position: relative;
-    min-width: 164px;
-    padding: 11px 24px;
-    border-radius: 15px;
-    border: 1px solid var(--border);
-    background-color: var(--white-1);
-    cursor: pointer;
-    transition: border-color var(--animation);
-  }
-
-  .customSelect:hover {
-    border-color: var(--green);
-  }
-
-  .selectedOption {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .selectPlaceholder {
-    font-weight: 500;
-  }
-
-  .selectIcon {
-    stroke: var(--black);
-    transition: var(--animation);
-  }
-
-  .selectIcon.isOpen {
-    transform: rotate(180deg);
-  }
-
-  .optionsList {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    position: absolute;
-    width: 189px;
-    border-radius: 15px;
-    padding: 10px 10px;
-    top: 52px;
-    left: 0;
-    right: 0;
-    background-color: var(--main-white);
-    box-shadow: 0 4px 47px 0 var(--shadow);
-    z-index: 1000;
-    overflow-y: auto;
-  }
-
-  .optionItem {
-    cursor: pointer;
-    font-weight: 500;
-    color: var(--black);
-    padding: 4px 10px;
-    border-radius: 5px;
-  }
-
-  .optionItem:hover {
-    background-color: var(--accent-secondary);
-    color: var(--white);
-  }
-
   .errorMessage {
-    display: flex;
-    align-items: center;
-    gap: 5px;
     font-size: 12px;
-    position: absolute;
-    top: 46px;
-    left: 0px;
-    color: var(--error);
   }
-
-  /* Styles CustomSelect for Add words form */
 
   .modalCustomSelect {
-    position: relative;
     width: 204px;
-    padding: 11px 24px;
-    border-radius: 15px;
-    border: 1px solid var(--border-white);
-    background-color: var(--green);
-    cursor: pointer;
-    transition: border-color var(--animation);
     margin-bottom: 70px;
-    color: var(--white);
-  }
-
-  .modalSelectIcon {
-    stroke: var(--white);
-    transition: var(--animation);
-  }
-
-  .modalSelectIcon.isOpen {
-    transform: rotate(180deg);
-  }
-
-  .modalOptionsList {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    position: absolute;
-    width: 100%;
-    border-radius: 15px;
-    padding: 10px 10px;
-    top: 52px;
-    left: 0;
-    right: 0;
-    background-color: var(--main-white);
-    box-shadow: 0 4px 47px 0 var(--shadow);
-    z-index: 1000;
-    overflow-y: auto;
-    max-height: 240px;
-  }
-
-  .inputError,
-  .inputError:hover {
-    border-color: var(--error);
   }
 }

@@ -1,7 +1,7 @@
 .titleWrap {
   display: flex;
   flex-direction: column;
-  padding: 32px 16px;
+  padding: 32px 16px 57px 16px;
   border-radius: 25px 25px 0 0;
   background-color: var(--background-form);
   order: 1;
@@ -33,24 +33,18 @@
 
 @media screen and (min-width: 768px) {
   .titleWrap {
-    display: flex;
-    flex-direction: column;
     padding: 48px 64px;
     border-radius: 30px;
-    background-color: var(--background-form);
     order: 0;
   }
 
   .title {
-    font-weight: 600;
     font-size: 40px;
     line-height: 1.2;
-    letter-spacing: -0.02em;
     margin-bottom: 20px;
   }
 
   .about {
-    color: var(--text-form);
     font-size: 20px;
     margin-bottom: 32px;
   }
@@ -58,37 +52,6 @@
 
 @media screen and (min-width: 1440px) {
   .titleWrap {
-    display: flex;
-    flex-direction: column;
-    padding: 48px 64px;
-    border-radius: 30px;
     width: 628px;
-    background-color: var(--background-form);
-    order: 0;
-  }
-
-  .title {
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    margin-bottom: 20px;
-  }
-
-  .about {
-    font-size: 20px;
-    color: var(--text-form);
-    margin-bottom: 32px;
-  }
-
-  .loginLink {
-    text-align: center;
-    font-weight: 700;
-    color: var(--text-semitransparent);
-    transition: color var(--animation);
-  }
-
-  .loginLink:hover {
-    color: var(--black);
   }
 }

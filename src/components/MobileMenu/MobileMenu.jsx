@@ -18,7 +18,7 @@ export default function MobileMenu({ onClose }) {
   return (
     <div className={css.mobileMenu}>
       <button className={css.closeBtn} onClick={() => onClose()}>
-        <MdClose size={isTablet ? 40 : 32} className={css.closeIcon} />
+        <MdClose size={isTablet ? 34 : 28} className={css.closeIcon} />
       </button>
       <UserAvatar variant="mobileMenu" />
       {isTablet ? (

@@ -1,6 +1,5 @@
 .pageContainer {
-  padding: 24px 16px 248px 16px;
-  max-width: 375px;
+  padding: 24px 0 248px 0;
   margin-left: auto;
   margin-right: auto;
 }
@@ -10,7 +9,7 @@
   flex-direction: column;
   gap: 10px;
   height: 100%;
-  max-width: 1240px;
+  max-width: 343px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -35,60 +34,26 @@
 @media screen and (min-width: 768px) {
   .pageContainer {
     padding: 62px 0 200px 0;
-    max-width: 704px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .container {
     gap: 14px;
-    height: 100%;
     max-width: 704px;
   }
 
   .progressValue {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 58px;
     height: 58px;
-    font-weight: 500;
-    position: absolute;
-    top: 0px;
-    left: 0px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .pageContainer {
     padding: 62px 0 48px 0;
-    max-width: 1440px;
   }
 
   .container {
-    display: flex;
-    flex-direction: column;
     gap: 10px;
-    height: 100%;
     max-width: 1240px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .progressBarWrapper {
-    position: relative;
-    margin-left: auto;
-  }
-
-  .progressValue {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 58px;
-    height: 58px;
-    font-weight: 500;
-    position: absolute;
-    top: 0px;
-    left: 0px;
   }
 }

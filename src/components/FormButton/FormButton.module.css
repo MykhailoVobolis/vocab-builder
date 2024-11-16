@@ -44,46 +44,10 @@
 
 @media screen and (min-width: 768px) {
   .formButton {
-    display: block;
-    color: var(--white);
-    border-radius: 100px;
-    border: none;
-    width: 100%;
-    height: 60px;
-    font-family: inherit;
-    font-weight: 700;
     font-size: 18px;
-    line-height: 1.56;
-    background-color: var(--green);
-    transition: background-color var(--animation);
-    margin-bottom: 16px;
-  }
-
-  .formButton:hover {
-    background-color: var(--accent-secondary);
   }
 
   .wordsFormButton {
-    color: var(--black);
-    height: 56px;
-    font-family: inherit;
-    background-color: var(--white);
-    transition: color var(--animation);
-    margin-bottom: 0px;
-  }
-
-  .wordsFormButton:hover {
-    color: var(--accent-secondary);
-    background-color: var(--white);
-  }
-
-  .answerSaveButton {
-    height: 56px;
-    margin-bottom: 0px;
-  }
-
-  .submitAuthFormMobile {
-    font-size: 16px;
     height: 56px;
   }
 }

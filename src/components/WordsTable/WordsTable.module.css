@@ -145,34 +145,20 @@ td:nth-child(5) {
   stroke: var(--green);
 }
 
-.column-1 {
-}
-
 @media screen and (min-width: 768px) {
   .tableWrapper {
     padding: 18px;
-    border-radius: 15px;
-    background-color: var(--main-white);
-    overflow-x: auto;
-    max-width: 100%;
   }
 
   /* Стиль для заголовка таблиці */
   thead th {
-    background-color: var(--background-form);
     padding: 20px 12px 20px 22px;
-    font-weight: bold;
-    text-align: left;
-    font-weight: 500;
     font-size: 18px;
-    border-right: 1px solid var(--border-table);
   }
 
   /* Стиль для комірок таблиці */
   td {
     padding: 22px;
-    border-right: 1px solid var(--border-table);
-    font-weight: 500;
     font-size: 18px;
   }
 
@@ -193,87 +179,22 @@ td:nth-child(5) {
     width: 122px;
   }
 
-  td:nth-child(5) {
-    display: flex;
-    justify-content: center;
-  }
-
   .progressWrapper {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
     width: 80px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  /* Базовий стиль для контейнера таблиці */
-  .tableWrapper {
-    padding: 18px;
-    border-radius: 15px;
-    background-color: var(--main-white);
-    overflow-x: auto;
-    max-width: 100%;
-  }
-
-  .tableContainer {
-    overflow: hidden; /* Для обтинання кутів таблиці */
-    border-radius: 8px;
-  }
-
-  /* Стиль для таблиці */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--white);
-  }
-
-  thead tr {
-    border-bottom: 1px solid var(--border-table);
-  }
-
-  .headerTabContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   /* Стиль для заголовка таблиці */
   thead th {
-    background-color: var(--background-form);
     padding: 20px 22px;
-    font-weight: bold;
-    text-align: left;
-    font-weight: 500;
     font-size: 20px;
-    border-right: 1px solid var(--border-table);
-  }
-
-  thead th:last-child,
-  td:last-child {
-    border-right: none;
-    position: relative;
-  }
-
-  /* Стиль для рядків тіла таблиці */
-  tbody tr {
-    border-bottom: 1px solid var(--border-table);
   }
 
   /* Стиль для комірок таблиці */
   td {
-    padding: 22px;
-    border-right: 1px solid var(--border-table);
-    font-weight: 500;
     font-size: 20px;
-  }
-
-  tbody tr:last-child td:first-child {
-    border-bottom-left-radius: 8px;
-  }
-
-  tbody tr:last-child td:last-child {
-    border-bottom-right-radius: 8px;
   }
 
   /* Задати фіксовану ширину для окремих колонок DictionaryTab*/
@@ -293,70 +214,7 @@ td:nth-child(5) {
     width: 254px;
   }
 
-  td:nth-child(5) {
-    display: flex;
-    justify-content: center;
-  }
-
-  /* Задати фіксовану ширину для окремих колонок RecomendTab*/
-  .columnRecommend-1 {
-    width: 372px;
-  }
-
-  .columnRecommend-2 {
-    width: 363px;
-  }
-
-  .columnRecommend-3 {
-    width: 260px;
-  }
-
-  /* Стиль для кнопок */
-  .actionButton {
-    font-weight: 600;
-    font-size: 22px;
-    text-align: center;
-    color: var(--text-semitransparent);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: color var(--animation);
-  }
-
-  .actionButton:hover,
-  .actionButton:active {
-    color: var(--black);
-  }
-
   .progressWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 88px;
-  }
-
-  .addWordBtn {
-    display: flex;
-    align-items: center;
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--black);
-    gap: 8px;
-    background-color: transparent;
-    padding: 0;
-    border: none;
-    transition: color var(--animation);
-  }
-
-  .addWordBtn:hover {
-    color: var(--green);
-  }
-
-  .addWordBtnIcon {
-    stroke: var(--green);
-  }
-
-  .column-1 {
   }
 }

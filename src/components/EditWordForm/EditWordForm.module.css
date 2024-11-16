@@ -21,18 +21,4 @@
   .formContainer {
     width: 500px;
   }
-
-  .imputContainer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 18px;
-    margin-bottom: 32px;
-  }
-
-  .buttonGroup {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
 }

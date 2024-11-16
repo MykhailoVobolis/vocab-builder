@@ -35,6 +35,7 @@ export default function WordsTable({ words }) {
     dispatch(addWord(newWord))
       .unwrap()
       .then((response) => {
+        toast.success("Word successfully added to your dictionary!");
         dispatch(getStatistics());
       })
       .catch((error) => {

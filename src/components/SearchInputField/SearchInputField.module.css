@@ -45,66 +45,10 @@
 
 @media screen and (min-width: 768px) {
   .inputContainer {
-    position: relative;
     margin-bottom: 0;
   }
 
   .searchInputField {
     width: 274px;
-    padding: 11px 24px;
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    outline: transparent;
-    outline-offset: 4px;
-    line-height: 1.5;
-    background-color: transparent;
-    transition: border-color var(--animation);
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .inputContainer {
-    position: relative;
-    margin-bottom: 0;
-  }
-
-  .label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-  }
-
-  .searchInputField {
-    width: 274px;
-    padding: 11px 24px;
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    outline: transparent;
-    outline-offset: 4px;
-    line-height: 1.5;
-    background-color: transparent;
-    transition: border-color var(--animation);
-  }
-
-  .searchInputField:hover {
-    border-color: var(--green);
-  }
-
-  .searchInputField::placeholder {
-    font-weight: 500;
-    line-height: 1.5;
-    color: var(--black);
-  }
-
-  .searchIcon {
-    position: absolute;
-    top: 14px;
-    right: 24px;
-    stroke: var(--black);
   }
 }

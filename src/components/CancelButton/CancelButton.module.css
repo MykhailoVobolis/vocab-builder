@@ -34,27 +34,11 @@
 
 @media screen and (min-width: 768px) {
   .cancelButton {
-    display: block;
-    color: var(--white);
-    border-radius: 100px;
-    border: 1px solid var(--border-white);
-    width: 100%;
     height: 56px;
-    font-family: inherit;
-    font-weight: 700;
     font-size: 18px;
-    line-height: 1.56;
-    background-color: var(--green);
-    transition: color var(--animation), background-color var(--animation);
-  }
-
-  .cancelButton:hover {
-    color: var(--black);
-    background-color: var(--white);
   }
 
   .answerCancelButton {
-    background-color: transparent;
     color: var(--green);
     border: 1px solid var(--green);
     width: 100%;

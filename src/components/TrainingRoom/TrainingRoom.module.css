@@ -9,12 +9,8 @@
 
 @media screen and (min-width: 768px) {
   .tasksContainer {
-    display: flex;
-    border-radius: 15px;
     padding: 18px;
-    width: 100%;
     height: 600px;
-    background-color: var(--main-white);
   }
 }
 
@@ -22,10 +18,6 @@
   .tasksContainer {
     display: flex;
     flex-direction: row;
-    border-radius: 15px;
-    padding: 18px;
-    width: 100%;
     height: 338px;
-    background-color: var(--main-white);
   }
 }

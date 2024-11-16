@@ -48,6 +48,7 @@ export default function AddWordForm({ onClose }) {
       .then((response) => {
         methods.reset();
         onClose();
+        toast.success("Word successfully added to your dictionary!");
         return Promise.all([dispatch(getStatistics()), dispatch(getWordsOwn())]);
       })
       .catch((error) => {
