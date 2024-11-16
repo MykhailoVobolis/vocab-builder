@@ -26,6 +26,8 @@
   color: var(--text-semitransparent);
   height: 100%;
   width: 65px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .answerCancelButton :hover {
