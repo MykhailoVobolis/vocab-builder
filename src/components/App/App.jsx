@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsRefreshing } from "../../redux/auth/selectors.js";
 import { refreshUser } from "../../redux/auth/operations.js";
+import { finishAuthProcess } from "../../redux/auth/slice.js";
 
 import Layout from "../Layout/Layout.jsx";
 import PrivateRoute from "../PrivateRoute.jsx";
@@ -23,7 +24,9 @@ export default function App() {
   const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
-    dispatch(refreshUser());
+    dispatch(refreshUser()).finally(() => {
+      dispatch(finishAuthProcess());
+    });
   }, [dispatch]);
 
   return isRefreshing ? (
@@ -32,8 +35,8 @@ export default function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<RestrictedRoute component={<HomePage />} redirectTo="/dictionary" />} />
-        <Route path="register" element={<RestrictedRoute component={<RegisterPage />} redirectTo="/dictionary" />} />
-        <Route path="login" element={<RestrictedRoute component={<LoginPage />} redirectTo="/dictionary" />} />
+        <Route path="/register" element={<RestrictedRoute component={<RegisterPage />} redirectTo="/dictionary" />} />
+        <Route path="/login" element={<RestrictedRoute component={<LoginPage />} redirectTo="/dictionary" />} />
         <Route path="/dictionary" element={<PrivateRoute component={<DictionaryPage />} redirectTo="/" />} />
         <Route path="/recommend" element={<PrivateRoute component={<RecommendPage />} redirectTo="/" />} />
         <Route path="/training" element={<PrivateRoute component={<TrainingPage />} redirectTo="/" />} />
