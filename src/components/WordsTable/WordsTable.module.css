@@ -85,6 +85,7 @@ tbody tr:last-child td:last-child {
 .columnDictionary-4 {
   min-width: 50px;
   max-width: 50px;
+  padding: 16px 9px;
 }
 
 td:nth-child(5) {
@@ -139,12 +140,13 @@ td:nth-child(5) {
 
 .addWordBtn {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   font-family: inherit;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--black);
-  gap: 8px;
+  gap: 7px;
   background-color: transparent;
   padding: 0;
   border: none;
@@ -191,6 +193,7 @@ td:nth-child(5) {
 
   .columnDictionary-4 {
     max-width: 122px;
+    padding: 22px;
   }
 
   .columnDictionary-5 {
@@ -217,7 +220,7 @@ td:nth-child(5) {
   .columnRecommend-4 {
     min-width: 148px;
     max-width: 148px;
-    padding: 16px 14px;
+    padding: 14px;
   }
 }
 
@@ -235,22 +238,56 @@ td:nth-child(5) {
 
   /* Задати фіксовану ширину для окремих колонок DictionaryTab*/
   .columnDictionary-1 {
+    min-width: 280px;
     max-width: 280px;
   }
 
   .columnDictionary-2 {
+    min-width: 274px;
     max-width: 274px;
   }
 
   .columnDictionary-3 {
+    min-width: 260px;
     max-width: 260px;
   }
 
   .columnDictionary-4 {
+    min-width: 254px;
     max-width: 254px;
+  }
+
+  .columnDictionary-5 {
+    min-width: 136px;
+    max-width: 136px;
   }
 
   .progressWrapper {
     width: 88px;
+  }
+
+  .columnRecommend-1 {
+    min-width: 372px;
+    max-width: 372px;
+  }
+
+  .columnRecommend-2 {
+    min-width: 364px;
+    max-width: 364px;
+  }
+
+  .columnRecommend-3 {
+    min-width: 260px;
+    max-width: 260px;
+  }
+
+  .columnRecommend-4 {
+    min-width: 208px;
+    max-width: 208px;
+    padding: 22px;
+  }
+
+  .addWordBtn {
+    font-size: 16px;
   }
 }
