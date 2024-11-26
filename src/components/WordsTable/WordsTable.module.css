@@ -55,6 +55,7 @@ td {
   border-right: 1px solid var(--border-table);
   font-weight: 500;
   font-size: 14px;
+  overflow-wrap: break-word;
 }
 
 tbody tr:last-child td:first-child {
@@ -67,19 +68,23 @@ tbody tr:last-child td:last-child {
 
 /* Задати фіксовану ширину для окремих колонок DictionaryTab*/
 .columnDictionary-1 {
-  width: 82px;
+  min-width: 77px;
+  max-width: 82px;
 }
 
 .columnDictionary-2 {
-  width: 116px;
+  min-width: 114px;
+  max-width: 116px;
 }
 
 .columnDictionary-3 {
-  width: 0px;
+  min-width: 95px;
+  max-width: 95px;
 }
 
 .columnDictionary-4 {
-  width: 95px;
+  min-width: 50px;
+  max-width: 50px;
 }
 
 td:nth-child(5) {
@@ -89,15 +94,24 @@ td:nth-child(5) {
 
 /* Задати фіксовану ширину для окремих колонок RecomendTab*/
 .columnRecommend-1 {
-  width: 372px;
+  min-width: 90px;
+  max-width: 90px;
 }
 
 .columnRecommend-2 {
-  width: 363px;
+  min-width: 116px;
+  max-width: 116px;
 }
 
 .columnRecommend-3 {
-  width: 260px;
+  min-width: 99px;
+  max-width: 99px;
+}
+
+.columnRecommend-4 {
+  min-width: 38px;
+  max-width: 38px;
+  padding: 16px 9px;
 }
 
 /* Стиль для кнопок */
@@ -164,24 +178,46 @@ td:nth-child(5) {
 
   /* Задати фіксовану ширину для окремих колонок DictionaryTab*/
   .columnDictionary-1 {
-    width: 160px;
+    max-width: 160px;
   }
 
   .columnDictionary-2 {
-    width: 169px;
+    max-width: 169px;
   }
 
   .columnDictionary-3 {
-    width: 151px;
+    max-width: 151px;
   }
 
   .columnDictionary-4 {
-    width: 122px;
+    max-width: 122px;
+  }
+
+  .columnDictionary-5 {
+    max-width: 66px;
   }
 
   .progressWrapper {
     justify-content: space-between;
     width: 80px;
+  }
+
+  .columnRecommend-1 {
+    max-width: 180px;
+  }
+
+  .columnRecommend-2 {
+    max-width: 180px;
+  }
+
+  .columnRecommend-3 {
+    max-width: 160px;
+  }
+
+  .columnRecommend-4 {
+    min-width: 148px;
+    max-width: 148px;
+    padding: 16px 14px;
   }
 }
 
@@ -199,19 +235,19 @@ td:nth-child(5) {
 
   /* Задати фіксовану ширину для окремих колонок DictionaryTab*/
   .columnDictionary-1 {
-    width: 280px;
+    max-width: 280px;
   }
 
   .columnDictionary-2 {
-    width: 274px;
+    max-width: 274px;
   }
 
   .columnDictionary-3 {
-    width: 260px;
+    max-width: 260px;
   }
 
   .columnDictionary-4 {
-    width: 254px;
+    max-width: 254px;
   }
 
   .progressWrapper {

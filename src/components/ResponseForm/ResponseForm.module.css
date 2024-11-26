@@ -1,7 +1,6 @@
 .responseWrapper {
   display: flex;
   justify-content: space-between;
-  align-items: end;
   width: 100%;
   padding: 22px;
   height: 50%;
@@ -30,7 +29,7 @@
 }
 
 .inputAnswer::placeholder {
-  color: var(--black);
+  color: var(--text-semitransparent);
 }
 
 .nextBtn {
@@ -73,7 +72,7 @@
   gap: 5px;
   font-size: 10px;
   position: absolute;
-  top: 46px;
+  top: 48px;
   color: var(--error);
 }
 
@@ -100,6 +99,7 @@
 
   .errorMessage {
     font-size: 12px;
+    top: 54px;
   }
 }
 
